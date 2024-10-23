@@ -1,10 +1,10 @@
 function goToRandomLink() {
     const links = [
         // add new links here
-        "/about.html",
-        "/links.html",
-        "/collection.html",
-        "/wolfzirkus.html",
+        "/about",
+        "/links",
+        "/collection",
+        "/wolfzirkus",
     ];
 
     let randomLinkIndex = Math.floor(Math.random() * links.length);
