@@ -1,0 +1,120 @@
+a:link {
+  text-decoration: underline;
+  color: #ff808c;
+}
+
+a:visited {
+  color: #ff808c;
+}
+
+a:hover {
+  color: #ff4a5b;
+  text-decoration: none;
+  
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #ffffff;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #ffe6b3;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #ffe680;
+}
+:root{
+  scrollbar-color: #ffe6b3 #FFFFFF !important;
+  scrollbar-width: thin !important;
+}
+
+.mainbox {
+    border: 9px solid #ffe6b3;
+      font-family: "strawberrymuffins";
+      color: #992b2f;
+      font-size:18px;
+        overflow-wrap: break-word;
+        border-collapse: collapse;
+        background-color: #ffffff;
+        width: 500px;
+        height: 500px;
+        position: absolute;
+    top:0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+        
+}
+
+.neo {
+        position: absolute;
+        top: -40px;
+        left: -300px;
+        pointer-events: none;
+    }
+
+.button {
+        position: absolute;
+bottom: -70px;
+right:0px;
+        pointer-events: none;
+    }
+    
+.rings {
+  position:absolute;
+  top:0px;
+  right:-280px;
+}
+
+.updateslog {
+    width: 410px;
+  height: 150px;
+    border-right: 5px dashed #ffe6b3;
+    border-left: 5px dashed #ffe6b3;
+    border-bottom: 5px dashed #ffe6b3;
+    border-top: 1px solid #ffe6b3;
+  overflow-x: break-word;
+  overflow-y: auto;
+list-style: none;
+text-align:left;
+    box-sizing: border-box;
+    padding: 10px;
+}
+
+.upheader {
+  width:410px;
+  background-color:#ffe6b3;
+  color:white;
+  font-family: "strawberrymuffins";
+}
+
+@font-face {
+    font-family: "strawberrymuffins";
+    src: url("/fonts/BalsamiqSans-Regular.woff2") format("woff2"),
+         url("/fonts/BalsamiqSans-Regular.woff") format("woff");
+}
+
+@font-face {
+    font-family: "porkys";
+    src: url("/fonts/porkys.woff2") format("woff2"),
+         url("/fonts/porkys.woff") format("woff");
+}
+
+body {
+  overflow-x: hidden;
+  letter-spacing: 2px;
+    background-image: url("/images/backgrounds/looping-yellow-bg-scroll-reverse.gif");
+    background-repeat: repeat;
+}
+
+
+

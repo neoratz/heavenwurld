@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  
+  <link rel="shortcut icon" type="image/png" href="https://imgur.com/wzORyyC.png"/>
+  
+  <script type='text/javascript'>
+
+
+//<![CDATA[
+var rate = 50;
+if (document.getElementById) 
+window.onerror=new Function("return true")
+
+var objActive; // The object which event occured in 
+var act = 0; // Flag during the action 
+var elmH = 0; // Hue 
+var elmS = 128; // Saturation 
+var elmV = 255; // Value 
+var clrOrg; // A color before the change 
+var TimerID; // Timer ID
+if (document.all) { 
+document.onmouseover = doRainbowAnchor; 
+document.onmouseout = stopRainbowAnchor; 
+} 
+else if (document.getElementById) { 
+document.captureEvents(Event.MOUSEOVER | Event.MOUSEOUT); 
+document.onmouseover = Mozilla_doRainbowAnchor; 
+document.onmouseout = Mozilla_stopRainbowAnchor; 
+}
+function doRainbow(obj) 
+{ 
+if (act == 0) { 
+act = 1; 
+if (obj) 
+objActive = obj; 
+else 
+objActive = event.srcElement; 
+clrOrg = objActive.style.color; 
+TimerID = setInterval("ChangeColor()",100); 
+} 
+}
+function stopRainbow() 
+{ 
+if (act) { 
+objActive.style.color = clrOrg; 
+clearInterval(TimerID); 
+act = 0; 
+} 
+}
+function doRainbowAnchor() 
+{ 
+if (act == 0) { 
+var obj = event.srcElement; 
+while (obj.tagName != 'A' && obj.tagName != 'BODY') { 
+obj = obj.parentElement; 
+if (obj.tagName == 'A' || obj.tagName == 'BODY') 
+break; 
+}
+if (obj.tagName == 'A' && obj.href != '') { 
+objActive = obj; 
+act = 1; 
+clrOrg = objActive.style.color; 
+TimerID = setInterval("ChangeColor()",100); 
+} 
+} 
+}
+function stopRainbowAnchor() 
+{ 
+if (act) { 
+if (objActive.tagName == 'A') { 
+objActive.style.color = clrOrg; 
+clearInterval(TimerID); 
+act = 0; 
+} 
+} 
+}
+function Mozilla_doRainbowAnchor(e) 
+{ 
+if (act == 0) { 
+obj = e.target; 
+while (obj.nodeName != 'A' && obj.nodeName != 'BODY') { 
+obj = obj.parentNode; 
+if (obj.nodeName == 'A' || obj.nodeName == 'BODY') 
+break; 
+}
+if (obj.nodeName == 'A' && obj.href != '') { 
+objActive = obj; 
+act = 1; 
+clrOrg = obj.style.color; 
+TimerID = setInterval("ChangeColor()",100); 
+} 
+} 
+}
+function Mozilla_stopRainbowAnchor(e) 
+{ 
+if (act) { 
+if (objActive.nodeName == 'A') { 
+objActive.style.color = clrOrg; 
+clearInterval(TimerID); 
+act = 0; 
+} 
+} 
+}
+function ChangeColor() 
+{ 
+objActive.style.color = makeColor(); 
+}
+function makeColor() 
+{ 
+// Don't you think Color Gamut to look like Rainbow?
+// HSVtoRGB 
+if (elmS == 0) { 
+elmR = elmV; elmG = elmV; elmB = elmV; 
+} 
+else { 
+t1 = elmV; 
+t2 = (255 - elmS) * elmV / 255; 
+t3 = elmH % 60; 
+t3 = (t1 - t2) * t3 / 60;
+if (elmH < 60) { 
+elmR = t1; elmB = t2; elmG = t2 + t3; 
+} 
+else if (elmH < 120) { 
+elmG = t1; elmB = t2; elmR = t1 - t3; 
+} 
+else if (elmH < 180) { 
+elmG = t1; elmR = t2; elmB = t2 + t3; 
+} 
+else if (elmH < 240) { 
+elmB = t1; elmR = t2; elmG = t1 - t3; 
+} 
+else if (elmH < 300) { 
+elmB = t1; elmG = t2; elmR = t2 + t3; 
+} 
+else if (elmH < 360) { 
+elmR = t1; elmG = t2; elmB = t1 - t3; 
+} 
+else { 
+elmR = 0; elmG = 0; elmB = 0; 
+} 
+}
+elmR = Math.floor(elmR).toString(16); 
+elmG = Math.floor(elmG).toString(16); 
+elmB = Math.floor(elmB).toString(16); 
+if (elmR.length == 1) elmR = "0" + elmR; 
+if (elmG.length == 1) elmG = "0" + elmG; 
+if (elmB.length == 1) elmB = "0" + elmB
+elmH = elmH + rate; 
+if (elmH >= 360) 
+elmH = 0;
+return '#' + elmR + elmG + elmB; 
+}
+//]]>
+</script>
+  
+    <style>
+    
+    
+    a:visited{
+  color:blue;
+}
+    a:link{
+  color:blue;
+}
+body {
+    background-image: url("https://imgur.com/cq262lw.png");
+    background-repeat: repeat;
+    background-attachment: scroll;
+    background-position: center;
+
+}
+
+
+
+</style>
+
+    <meta charset="UTF-8">
+    <title>official pages | L*O*V*E ↰</title>
+    <!-- The style.css file allows you to change the look of your web pages.
+         If you include the next line in all your web pages, they will all share the same look.
+         This makes it easier to make new pages for your site. -->
+    <link href="/style.css" rel="stylesheet" type="text/css" media="all">
+
+  </head>
+  
+  
+  <body>
+
+<center><b><a href="/wolfzirkus/aboutpage.html">about the webpage</a> * <a href="/wolfzirkus/officialpages.html">official popee pages</a> * <a href="/wolfzirkus/fanmadepages.html">fanmade popee pages</a> * <a href="/wolfzirkus/credits.html">credits</a></b><p>
+
+<table><tr><td width="50"><center><img src="https://imgur.com/V9iUFNc.png"><br><img src="https://imgur.com/V9iUFNc.png"></center></td><td>
+
+
+<table width="800" bgcolor="white"><tr><td><center><h1>OFFICIAL POPEE PAGES</h1>
+<table><tr><td width="224"><img src="https://vignette.wikia.nocookie.net/popeetheperformer/images/1/10/Ecc835676cfb892a8af914221776f32a.jpeg/" width="224"></td><td width="400"><a href="http://www.thefool-inc.com/popdeath/">http://www.thefool-inc.com/popdeath/</a><br><b>Ryuji Masuda's website</b></td></tr><tr><td height="100" width="224"><img src="https://66.media.tumblr.com/1344def4e58ed5fe8a24c769d9f7ad66/ac5819e72ff1bbe2-0f/s250x400/510f7c52a1f3c353f0fe77de8fc29b5cc03bf496.gif"></td><td height="100" width="400"><a href="https://web.archive.org/web/20080914191622/http://www.kids-station.com/minisite/popee/index.html">https://web.archive.org/web/20080914191622/http://www.kids-station.com/minisite/popee/index.html</a><br><b>Kids Station</b></td></tr><tr><td height="100" width="224"><center><img src="https://66.media.tumblr.com/35f1511f9eadfefd3164532523af3f05/32196a6b5d9b9028-6c/s250x400/5409a8f13576de64ffd745f12b93e2efbbeb84dd.gif"></center></td><td height="100" width="400"><a href="https://web.archive.org/web/20030623234656/http://www.kids-station.com/kidsvisa/">https://web.archive.org/web/20030623234656/http://www.kids-station.com/kidsvisa/</a><br><b>Kids Station VISA info</b></td></tr><tr><td height="224" width="224"><img src="https://66.media.tumblr.com/d0d4eca659e50dc62cc16ccd2457032f/ac5819e72ff1bbe2-fc/s250x400/18760657177e1a64b730aa8202a986d5b6a72e54.gif"></td><td height="100" width="400"><a href="https://web.archive.org/web/20040417134258/http://columbia.jp/~popee/">https://web.archive.org/web/20040417134258/http://columbia.jp/~popee/</a><br><b>Columbia Music Entertainment</b></td></tr><tr><td height="100" width="224"><img src="https://66.media.tumblr.com/16e1d8acb03247f13ba3e8e710570cb0/tumblr_oljupfIz651w3i597o3_250.gif"></td><td height="100" width="400"><a href="https://web.archive.org/web/20040422204814/http://computers.livedoor.com/webapp/popee/">https://web.archive.org/web/20040422204814/http://computers.livedoor.com/webapp/popee/</a><br><b>livedoor</b></td></tr><tr><td height="100" width="224"><img src="https://imgur.com/pg8lnKG.gif"></td><td height="100" width="400"><a href="https://web.archive.org/web/20030412163551/http://www.curio-city.com/kids-station/">https://web.archive.org/web/20030412163551/http://www.curio-city.com/kids-station/</a><br><a href="https://web.archive.org/web/20030416123125/http://mall.curio-city.com/curioshop/shop/00600/popee.html">https://web.archive.org/web/20030416123125/http://mall.curio-city.com/curioshop/shop/00600/popee.html</a><br><b>Curio City</b></td></tr></table>
+
+</center></td></tr></table></td><td width="50"><center><img src="https://imgur.com/V9iUFNc.png"><br><img src="https://imgur.com/V9iUFNc.png"></center></td></tr></table></center>
+
+<center><p><img id="map" src="https://imgur.com/LcGVFLA.png" usemap="#map" />
+ <map name="map">
+<map id='map' name='map'>
+    <area onmouseover="document.getElementById('map').src = 'https://imgur.com/6gD6mrU.png';" onmouseleave="document.getElementById('map').src = 'https://imgur.com/LcGVFLA.png';" href="/wolfzirkus.html" coords="1,0,287,164" shape="rect">
+</map></map></p></center>
+
+  </body>
+</html>

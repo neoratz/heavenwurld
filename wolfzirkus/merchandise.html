@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  
+  <link rel="shortcut icon" type="image/png" href="https://imgur.com/wzORyyC.png"/>
+  
+  <script type='text/javascript'>
+
+
+//<![CDATA[
+var rate = 50;
+if (document.getElementById) 
+window.onerror=new Function("return true")
+
+var objActive; // The object which event occured in 
+var act = 0; // Flag during the action 
+var elmH = 0; // Hue 
+var elmS = 128; // Saturation 
+var elmV = 255; // Value 
+var clrOrg; // A color before the change 
+var TimerID; // Timer ID
+if (document.all) { 
+document.onmouseover = doRainbowAnchor; 
+document.onmouseout = stopRainbowAnchor; 
+} 
+else if (document.getElementById) { 
+document.captureEvents(Event.MOUSEOVER | Event.MOUSEOUT); 
+document.onmouseover = Mozilla_doRainbowAnchor; 
+document.onmouseout = Mozilla_stopRainbowAnchor; 
+}
+function doRainbow(obj) 
+{ 
+if (act == 0) { 
+act = 1; 
+if (obj) 
+objActive = obj; 
+else 
+objActive = event.srcElement; 
+clrOrg = objActive.style.color; 
+TimerID = setInterval("ChangeColor()",100); 
+} 
+}
+function stopRainbow() 
+{ 
+if (act) { 
+objActive.style.color = clrOrg; 
+clearInterval(TimerID); 
+act = 0; 
+} 
+}
+function doRainbowAnchor() 
+{ 
+if (act == 0) { 
+var obj = event.srcElement; 
+while (obj.tagName != 'A' && obj.tagName != 'BODY') { 
+obj = obj.parentElement; 
+if (obj.tagName == 'A' || obj.tagName == 'BODY') 
+break; 
+}
+if (obj.tagName == 'A' && obj.href != '') { 
+objActive = obj; 
+act = 1; 
+clrOrg = objActive.style.color; 
+TimerID = setInterval("ChangeColor()",100); 
+} 
+} 
+}
+function stopRainbowAnchor() 
+{ 
+if (act) { 
+if (objActive.tagName == 'A') { 
+objActive.style.color = clrOrg; 
+clearInterval(TimerID); 
+act = 0; 
+} 
+} 
+}
+function Mozilla_doRainbowAnchor(e) 
+{ 
+if (act == 0) { 
+obj = e.target; 
+while (obj.nodeName != 'A' && obj.nodeName != 'BODY') { 
+obj = obj.parentNode; 
+if (obj.nodeName == 'A' || obj.nodeName == 'BODY') 
+break; 
+}
+if (obj.nodeName == 'A' && obj.href != '') { 
+objActive = obj; 
+act = 1; 
+clrOrg = obj.style.color; 
+TimerID = setInterval("ChangeColor()",100); 
+} 
+} 
+}
+function Mozilla_stopRainbowAnchor(e) 
+{ 
+if (act) { 
+if (objActive.nodeName == 'A') { 
+objActive.style.color = clrOrg; 
+clearInterval(TimerID); 
+act = 0; 
+} 
+} 
+}
+function ChangeColor() 
+{ 
+objActive.style.color = makeColor(); 
+}
+function makeColor() 
+{ 
+// Don't you think Color Gamut to look like Rainbow?
+// HSVtoRGB 
+if (elmS == 0) { 
+elmR = elmV; elmG = elmV; elmB = elmV; 
+} 
+else { 
+t1 = elmV; 
+t2 = (255 - elmS) * elmV / 255; 
+t3 = elmH % 60; 
+t3 = (t1 - t2) * t3 / 60;
+if (elmH < 60) { 
+elmR = t1; elmB = t2; elmG = t2 + t3; 
+} 
+else if (elmH < 120) { 
+elmG = t1; elmB = t2; elmR = t1 - t3; 
+} 
+else if (elmH < 180) { 
+elmG = t1; elmR = t2; elmB = t2 + t3; 
+} 
+else if (elmH < 240) { 
+elmB = t1; elmR = t2; elmG = t1 - t3; 
+} 
+else if (elmH < 300) { 
+elmB = t1; elmG = t2; elmR = t2 + t3; 
+} 
+else if (elmH < 360) { 
+elmR = t1; elmG = t2; elmB = t1 - t3; 
+} 
+else { 
+elmR = 0; elmG = 0; elmB = 0; 
+} 
+}
+elmR = Math.floor(elmR).toString(16); 
+elmG = Math.floor(elmG).toString(16); 
+elmB = Math.floor(elmB).toString(16); 
+if (elmR.length == 1) elmR = "0" + elmR; 
+if (elmG.length == 1) elmG = "0" + elmG; 
+if (elmB.length == 1) elmB = "0" + elmB
+elmH = elmH + rate; 
+if (elmH >= 360) 
+elmH = 0;
+return '#' + elmR + elmG + elmB; 
+}
+//]]>
+</script>
+  
+    <style>
+    
+    
+    a:visited{
+  color:blue;
+}
+    a:link{
+  color:blue;
+}
+body {
+    background-image: url("https://imgur.com/EhhYNnL.png");
+    background-repeat: repeat;
+    background-attachment: scroll;
+    background-position: center;
+
+}
+
+.episodes {
+  border: 1px solid black;
+}
+
+</style>
+
+    <meta charset="UTF-8">
+    <title>merchandise | L*O*V*E ↰</title>
+    <!-- The style.css file allows you to change the look of your web pages.
+         If you include the next line in all your web pages, they will all share the same look.
+         This makes it easier to make new pages for your site. -->
+    <link href="/style.css" rel="stylesheet" type="text/css" media="all">
+
+  </head>
+  
+  
+  <body>
+
+<center><b><a href="/wolfzirkus/aboutshow.html">about the show</a> * <a href="/wolfzirkus/merchandise.html">merchandise</a> * <a href="/wolfzirkus/relatedmedia.html">related media</a></b><p>
+
+<table><tr><td width="50"><center><img src="https://imgur.com/V9iUFNc.png"><br><img src="https://imgur.com/V9iUFNc.png"><br><img src="https://imgur.com/V9iUFNc.png"><br><img src="https://imgur.com/V9iUFNc.png"><br><img src="https://imgur.com/V9iUFNc.png"><br><img src="https://imgur.com/V9iUFNc.png"><br><img src="https://imgur.com/V9iUFNc.png"><br><img src="https://imgur.com/V9iUFNc.png"><br><img src="https://imgur.com/V9iUFNc.png"><br><img src="https://imgur.com/V9iUFNc.png"><br><img src="https://imgur.com/V9iUFNc.png"><br><img src="https://imgur.com/V9iUFNc.png"><br><img src="https://imgur.com/V9iUFNc.png"><br><img src="https://imgur.com/V9iUFNc.png"><br><img src="https://imgur.com/V9iUFNc.png"><br><img src="https://imgur.com/V9iUFNc.png"><br><img src="https://imgur.com/V9iUFNc.png"><br><img src="https://imgur.com/V9iUFNc.png"><br><img src="https://imgur.com/V9iUFNc.png"><br><img src="https://imgur.com/V9iUFNc.png"></center></td><td>
+
+
+<table width="800" bgcolor="white"><tr><td><center><h1>MERCHANDISE</h1>
+LOTS OF INFO MISSING! If you have info to contribute contact me <a href="https://wolf-zirkus.tumblr.com/ask">here</a>!<br>I'm not very good with company stuff to manufacturers may be incorrect.<br>Most info taken from <a href="https://columbia.jp/~popee/goods0.html">columbia.jp</a>.
+<p><table><tr><td><img src="https://imgur.com/KrbMpdE.png"><br><b>Trading Figures (7 types)</b><br>Original price: ¥286<br>Manufactured by: Movic</td></tr></table><br><table><tr><td><img src="https://imgur.com/4p1S0IQ.png"><br><b>Clear Files (3 type set)</b><br>Original price: ¥600<br>Manufactured by: <a href="https://web.archive.org/web/20030204231926fw_/http://www.jedi-ltd.co.jp/popee.html">Jedi</a></td><td><img src="https://imgur.com/f2KL7Bw.png"><br><b>Kedamono Bubblegram</b><br>Original price: ¥19,800<br>Manufactured by: <a href="https://web.archive.org/web/20030204231926fw_/http://www.jedi-ltd.co.jp/popee.html">Jedi</a></td></tr></table><br><table><tr><td><img src="https://imgur.com/I0aj5qu.png"><br><b>Mask Collection (4 pc)</b><br>Original price: ¥8,800<br>Manufactured by: <a href="https://web.archive.org/web/20030204231926fw_/http://www.jedi-ltd.co.jp/popee.html">Jedi</a></td><td><img src="https://imgur.com/ASKHuGm.png"><br><b>Organizer</b><br>Original price: ¥2,800<br>Manufactured by: <a href="https://web.archive.org/web/20030204231926fw_/http://www.jedi-ltd.co.jp/popee.html">Jedi</a></td></tr></table><br>
+
+<table><tr><td><img src="https://imgur.com/nzw5zEy.png"><br><b>Kedamono Ring</b><br>Original price: ¥9,800<br>Manufactured by: <a href="https://web.archive.org/web/20030204231926fw_/http://www.jedi-ltd.co.jp/popee.html">Jedi</a></td><td><img src="https://imgur.com/0ryZFcS.png"><br><b>Kedamono Bracelet</b><br>Original price: ¥12,800<br>Manufactured by: <a href="https://web.archive.org/web/20030204231926fw_/http://www.jedi-ltd.co.jp/popee.html">Jedi</a></td></tr></table>
+
+<br><table><tr><td><img src="https://imgur.com/sucl13C.png"><br><b>Kedamono Bookmarks (6 pc)</b><br>Original price: ¥380<br>Manufactured by: <a href="https://web.archive.org/web/20030204231926fw_/http://www.jedi-ltd.co.jp/popee.html">Jedi</a></td><td><img src="https://imgur.com/Ig1CcLB.png"><br><b>Pen Case</b><br>Original price: ¥980<br>Manufactured by: <a href="https://web.archive.org/web/20030204231926fw_/http://www.jedi-ltd.co.jp/popee.html">Jedi</a></td></tr></table>
+
+<br><table><tr><td><img src="https://imgur.com/j33YO55.png"><br><b>Mask Collection (12 pc)</b><br>Original price: ¥3,800<br>Manufactured by: <a href="https://web.archive.org/web/20030204231926fw_/http://www.jedi-ltd.co.jp/popee.html">Jedi</a></td><td><img src="https://imgur.com/6qK2tjN.png"><br><b>Kedamono Earrings</b><br>Original price: ¥7,800<br>Manufactured by: <a href="https://web.archive.org/web/20030204231926fw_/http://www.jedi-ltd.co.jp/popee.html">Jedi</a></td></tr></table>
+
+<br><table><tr><td><img src="https://imgur.com/nsbZct1.png"><br><b>Mask Stickers (180)</b><br>Original price: ¥1,000<br>Manufactured by: <a href="https://web.archive.org/web/20030204231926fw_/http://www.jedi-ltd.co.jp/popee.html">Jedi</a></td><td><img src="https://imgur.com/sssKCtK.png"><br><b>Face Pins (4 type set)</b><br>Original price: ¥1,920<br>Manufactured by: <a href="https://web.archive.org/web/20030204231926fw_/http://www.jedi-ltd.co.jp/popee.html">Jedi</a></td></tr></table>
+
+<br><table><tr><td><img src="https://imgur.com/KOhBoL3.png"><br><b>Kedamono Statue</b><br>Original price: ¥24,000<br>Manufactured by: ???</td><td><img src="https://imgur.com/CgdDzRq.png"><br><b>Watches</b><br>Original price: ???<br>Manufactured by: ???</td></tr></table>
+
+<br><table><tr><td><img src="https://imgur.com/mBIHSr9.png"><br><b>Mouse Pad (2 types)</b><br>Original price: ???<br>Manufactured by: ???</td><td><img src="https://imgur.com/VUqa9tl.png"><br><b>Liquid Mouse Pad</b><br>Original price: ???<br>Manufactured by: ???</td></tr></table>
+
+<br><table><tr><td><img src="https://imgur.com/wqnvD27.png"><br><b>POPEE the Performer Carnival<br>Uncensored Ver. CD-ROM</b><br>Original price: ¥5,800<br>Developed by: <a href="https://web.archive.org/web/20040429005802/http://computers.livedoor.com/webapp/popee/goods.html">Livedoor</a>
+<br><a target="_blank" href="/wolfzirkus/merchandise/ptpcarnival.html">Click here to read about the CD-ROM!</a></td><td><img src="https://imgur.com/GhfrZbq.png"><br><b>Sample Image</b></td></tr></table>
+
+<br><table><tr><td><img src="https://imgur.com/DQc3SnZ.png"><br><b>Mobile Strap (2 types)</b><br>Original price: ???<br>Manufactured by: ???</td><td><img src="https://imgur.com/X8IBDgN.png"><br><b>Mobile Antenna</b><br>Original price: ???<br>Manufactured by: ???</td></tr></table>
+
+<br><table><tr><td><img src="https://imgur.com/4cAIHg2.png"><br><b>Bendy Strap (2 types)</b><br>Original price: ???<br>Manufactured by: ???</td><td><img src="https://imgur.com/hVm7cNC.png"><br><b>Bendy Keychain</b><br>Original price: ???<br>Manufactured by: ???</td></tr></table>
+
+<br><table><tr><td><img src="https://imgur.com/RwmuKDq.png"><br><b>Bobbleheads (2 type set)</b><br>Original price: ???<br>Manufactured by: ???</td><td><img src="https://imgur.com/9lttdD0.png"><br><b>Postcards (6 type set)</b><br>Original price: ???<br>Manufactured by: ???</td></tr></table>
+
+<br><table><tr><td><img src="https://imgur.com/F6DS329.png"><br><b>T-Shirts (3 type set)</b><br>Original price: ???<br>Manufactured by: ???</td><td><img src="https://imgur.com/bQeycBl.png"><br><b>Papi & Paola Figure</b><br>Original price: ¥4,800<br>Manufactured by: <a href="https://web.archive.org/web/20020606111909fw_/http://timehouse.co.jp/index.html">Time House</a></td></tr></table>
+
+<br><table><tr><td><img src="https://imgur.com/ZKdoIpc.png"><br><b>Popee Figure</b><br>Original price: ¥3,800<br>Manufactured by: <a href="https://web.archive.org/web/20020619155238/http://timehouse.co.jp/THO/popy/popy.html">Time House</a></td><td><img src="https://imgur.com/0CJ1p28.png"><br><b>Kedamono Figure</b><br>Original price: ¥3,800<br>Manufactured by: <a href="https://web.archive.org/web/20020619155238/http://timehouse.co.jp/THO/popy/popy.html">Time House</a></td></tr></table>
+
+<br><table><tr><td><img src="https://imgur.com/irU601l.png"><br><b>Plush (3 types)</b><br>Original price: ???<br>Manufactured by: ???</td><td><img src="https://imgur.com/DxIkzfD.png"><br><b>Lighter & Ashtray (2 types)</b><br>Original price: ¥15,000<br>Manufactured by: <a href="https://web.archive.org/web/20030204231926fw_/http://www.jedi-ltd.co.jp/popee.html">Jedi</a></td></tr></table>
+
+<br><table><tr><td><img src="https://imgur.com/XspcFTA.png"><br><b>Sound Mascot (2 types)</b><br>Original price: ???<br>Manufactured by: ???</td><td><img src="https://imgur.com/slhoXs9.png"><br><b>Kedamono Cushion</b><br>Original price: ???<br>Manufactured by: ???</td></tr></table>
+
+<br><table><tr><td><img src="https://imgur.com/MyHL9qr.png"><br><b>Snap'n Roll Bracelets</b><br>Original price: ???<br>Manufactured by: ???</td><td><img src="https://imgur.com/oFQz55g.png"><br><b>VISA Card</b><br>Original price: ???<br>Manufactured by: ???</td></tr></table>
+
+<br><table><tr><td><img src="https://imgur.com/Dg37VjU.png"><br><b>VISA Card Mobile Strap</b><br>Original price: ???<br>Manufactured by: ???</td><td><img width="190" src="https://64.media.tumblr.com/13a4b4237934445acfa1848b9f221504/a5da2a597af7e1f2-80/s400x600/826f0a4fce3e1fab06dee776ece62414cd48cccf.gif"><br><b>VISA Card Jacket</b><br>Original price: ???<br>Manufactured by: ???</td></tr></table>
+
+<br><table><tr><td><img src="https://imgur.com/YU74NMb.png"><br><b>UFO Catcher Plushes</b><br>Original price: ???<br>Manufactured by: ???</td><td><img src="https://imgur.com/runc4hI.png"><br><b>SEGA Signboard</b><br>Original price: ???<br>Manufactured by: ???</td></tr></table>
+
+<br><table><tr><td><img src="https://imgur.com/AUyuU9N.png"><br><b>T-shirt (2 types)</b><br>Original price: ???<br>Manufactured by: ???</td><td><img src="https://imgur.com/oQAKLql.png"><br><b>Staff(?) Event T-shirt</b><br>Original price: ???<br>Manufactured by: Kids Station</td></tr></table>
+
+<br><table><tr><td><img src="https://imgur.com/haHuga8.png"><br><b>Plush (2 types)</b><br>Original price: ???<br>Manufactured by: ???</td><td><img src="https://imgur.com/MdeXyGN.png"><br><b>Kedamono Piggy Bank</b><br>Original price: ???<br>Manufactured by: ???</td></tr></table>
+
+<br><table><tr><td><img src="https://imgur.com/GvSuvXi.png"><br><b>Sample DVD</b><br>Original price: ???<br>Manufactured by: ???</td><td><img src="https://imgur.com/BIN0hpL.png"><br><b>Mouse Pad</b><br>Original price: ???<br>Manufactured by: Kids Station</td></tr></table>
+
+<h1>UNRELEASED MERCHANDISE?</h1>
+<table><tr><td><img src="https://imgur.com/E3eJE76.png"><br><b>Plush (3 types)</b><br>Original price: ???<br>Manufactured by: ???</td><td><img src="https://imgur.com/BKfsd5m.png"><br><b>Suction Cup Plush (3 types)</b><br>Original price: ???<br>Manufactured by: ???</td></tr></table>
+
+</center></td></tr></table></td><td width="50"><center><img src="https://imgur.com/V9iUFNc.png"><br><img src="https://imgur.com/V9iUFNc.png"><br><img src="https://imgur.com/V9iUFNc.png"><br><img src="https://imgur.com/V9iUFNc.png"><br><img src="https://imgur.com/V9iUFNc.png"><br><img src="https://imgur.com/V9iUFNc.png"><br><img src="https://imgur.com/V9iUFNc.png"><br><img src="https://imgur.com/V9iUFNc.png"><br><img src="https://imgur.com/V9iUFNc.png"><br><img src="https://imgur.com/V9iUFNc.png"><br><img src="https://imgur.com/V9iUFNc.png"><br><img src="https://imgur.com/V9iUFNc.png"><br><img src="https://imgur.com/V9iUFNc.png"><br><img src="https://imgur.com/V9iUFNc.png"><br><img src="https://imgur.com/V9iUFNc.png"><br><img src="https://imgur.com/V9iUFNc.png"><br><img src="https://imgur.com/V9iUFNc.png"><br><img src="https://imgur.com/V9iUFNc.png"><br><img src="https://imgur.com/V9iUFNc.png"><br><img src="https://imgur.com/V9iUFNc.png"></center></td></tr></table>
+
+<p><center><p><img id="map" src="https://imgur.com/LcGVFLA.png" usemap="#map" />
+ <map name="map">
+<map id='map' name='map'>
+    <area onmouseover="document.getElementById('map').src = 'https://imgur.com/6gD6mrU.png';" onmouseleave="document.getElementById('map').src = 'https://imgur.com/LcGVFLA.png';" href="/wolfzirkus.html" coords="1,0,287,164" shape="rect">
+</map></p></center></center>
+
+  </body>
+</html>

@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  
+  <link rel="shortcut icon" type="image/png" href="https://imgur.com/wzORyyC.png"/>
+  
+  <script type='text/javascript'>
+
+
+//<![CDATA[
+var rate = 50;
+if (document.getElementById) 
+window.onerror=new Function("return true")
+
+var objActive; // The object which event occured in 
+var act = 0; // Flag during the action 
+var elmH = 0; // Hue 
+var elmS = 128; // Saturation 
+var elmV = 255; // Value 
+var clrOrg; // A color before the change 
+var TimerID; // Timer ID
+if (document.all) { 
+document.onmouseover = doRainbowAnchor; 
+document.onmouseout = stopRainbowAnchor; 
+} 
+else if (document.getElementById) { 
+document.captureEvents(Event.MOUSEOVER | Event.MOUSEOUT); 
+document.onmouseover = Mozilla_doRainbowAnchor; 
+document.onmouseout = Mozilla_stopRainbowAnchor; 
+}
+function doRainbow(obj) 
+{ 
+if (act == 0) { 
+act = 1; 
+if (obj) 
+objActive = obj; 
+else 
+objActive = event.srcElement; 
+clrOrg = objActive.style.color; 
+TimerID = setInterval("ChangeColor()",100); 
+} 
+}
+function stopRainbow() 
+{ 
+if (act) { 
+objActive.style.color = clrOrg; 
+clearInterval(TimerID); 
+act = 0; 
+} 
+}
+function doRainbowAnchor() 
+{ 
+if (act == 0) { 
+var obj = event.srcElement; 
+while (obj.tagName != 'A' && obj.tagName != 'BODY') { 
+obj = obj.parentElement; 
+if (obj.tagName == 'A' || obj.tagName == 'BODY') 
+break; 
+}
+if (obj.tagName == 'A' && obj.href != '') { 
+objActive = obj; 
+act = 1; 
+clrOrg = objActive.style.color; 
+TimerID = setInterval("ChangeColor()",100); 
+} 
+} 
+}
+function stopRainbowAnchor() 
+{ 
+if (act) { 
+if (objActive.tagName == 'A') { 
+objActive.style.color = clrOrg; 
+clearInterval(TimerID); 
+act = 0; 
+} 
+} 
+}
+function Mozilla_doRainbowAnchor(e) 
+{ 
+if (act == 0) { 
+obj = e.target; 
+while (obj.nodeName != 'A' && obj.nodeName != 'BODY') { 
+obj = obj.parentNode; 
+if (obj.nodeName == 'A' || obj.nodeName == 'BODY') 
+break; 
+}
+if (obj.nodeName == 'A' && obj.href != '') { 
+objActive = obj; 
+act = 1; 
+clrOrg = obj.style.color; 
+TimerID = setInterval("ChangeColor()",100); 
+} 
+} 
+}
+function Mozilla_stopRainbowAnchor(e) 
+{ 
+if (act) { 
+if (objActive.nodeName == 'A') { 
+objActive.style.color = clrOrg; 
+clearInterval(TimerID); 
+act = 0; 
+} 
+} 
+}
+function ChangeColor() 
+{ 
+objActive.style.color = makeColor(); 
+}
+function makeColor() 
+{ 
+// Don't you think Color Gamut to look like Rainbow?
+// HSVtoRGB 
+if (elmS == 0) { 
+elmR = elmV; elmG = elmV; elmB = elmV; 
+} 
+else { 
+t1 = elmV; 
+t2 = (255 - elmS) * elmV / 255; 
+t3 = elmH % 60; 
+t3 = (t1 - t2) * t3 / 60;
+if (elmH < 60) { 
+elmR = t1; elmB = t2; elmG = t2 + t3; 
+} 
+else if (elmH < 120) { 
+elmG = t1; elmB = t2; elmR = t1 - t3; 
+} 
+else if (elmH < 180) { 
+elmG = t1; elmR = t2; elmB = t2 + t3; 
+} 
+else if (elmH < 240) { 
+elmB = t1; elmR = t2; elmG = t1 - t3; 
+} 
+else if (elmH < 300) { 
+elmB = t1; elmG = t2; elmR = t2 + t3; 
+} 
+else if (elmH < 360) { 
+elmR = t1; elmG = t2; elmB = t1 - t3; 
+} 
+else { 
+elmR = 0; elmG = 0; elmB = 0; 
+} 
+}
+elmR = Math.floor(elmR).toString(16); 
+elmG = Math.floor(elmG).toString(16); 
+elmB = Math.floor(elmB).toString(16); 
+if (elmR.length == 1) elmR = "0" + elmR; 
+if (elmG.length == 1) elmG = "0" + elmG; 
+if (elmB.length == 1) elmB = "0" + elmB
+elmH = elmH + rate; 
+if (elmH >= 360) 
+elmH = 0;
+return '#' + elmR + elmG + elmB; 
+}
+//]]>
+</script>
+  
+    <style>
+    
+    
+    a:visited{
+  color:blue;
+}
+    a:link{
+  color:blue;
+}
+body {
+    background-image: url("https://imgur.com/VCOmqro.png");
+    background-repeat: repeat;
+    background-attachment: scroll;
+    background-position: center;
+
+}
+
+.episodes {
+  border: 1px solid black;
+}
+
+</style>
+
+    <meta charset="UTF-8">
+    <title>about the show | L*O*V*E ↰</title>
+    <!-- The style.css file allows you to change the look of your web pages.
+         If you include the next line in all your web pages, they will all share the same look.
+         This makes it easier to make new pages for your site. -->
+    <link href="/style.css" rel="stylesheet" type="text/css" media="all">
+
+  </head>
+  
+  
+  <body>
+
+<center><b><a href="/wolfzirkus/aboutshow.html">about the show</a> * <a href="/wolfzirkus/merchandise.html">merchandise</a> * <a href="/wolfzirkus/relatedmedia.html">related media</a></b><p>
+
+<table><tr><td width="50"><center><img src="https://imgur.com/V9iUFNc.png"><br><img src="https://imgur.com/V9iUFNc.png"><br><img src="https://imgur.com/V9iUFNc.png"><br><img src="https://imgur.com/V9iUFNc.png"><br><img src="https://imgur.com/V9iUFNc.png"><br><img src="https://imgur.com/V9iUFNc.png"><br><img src="https://imgur.com/V9iUFNc.png"></center></td><td>
+
+<table width="800" bgcolor="white"><tr><td><center><h1>ABOUT THE SHOW</h1>
+<img width="400" src="https://static.tumblr.com/93ed1fbca7c85a22b8a4443df9c84c54/gz4gyfe/kRDpljsn3/tumblr_static_byatfg9f7hw884wskcg88s4sw.png">
+<br>Popee the Performer (ポピーザぱフォーマー) is a series of 3D animated shorts that originally aired January 3rd, 2000, and was created for the TV channel Kids Station. It was produced by Ryuji Masuda, writer and director, along with his wife Wakako Masuda, in charge of art and character design. The show is a violent slapstick comedy centered around the antics of Popee, Kedamono, and other inhabitants of the Wolf Circus.
+
+<h2>CHARACTERS</h2>
+<table width="600"><tr><td><img align="left" src="https://imgur.com/DPcdlcz.png"><b>POPEE</b> (ポピー)
+<br>An apprentice clown at Wolf Circus and the protagonist of the show. He may seem nice at first, but he's actually quite mischievous and cruel. He is shown to be short-tempered, easily jealous, and egotistical. He's "probably" a boy.</td></tr></table>
+<br clear=left>
+<br><table width="600"><tr><td><img align="right" src="https://imgur.com/rGLr0zp.png"><b>KEDAMONO</b> (ケダモノ, lit. beast)<br>Popee's assistant at Wolf Circus. He's friendly and delicate. He loves fried chicken to the point of dying and coming down from heaven repeatedly for it. Despite being Popee's assistant, he is frequently victim to Popee's violent outbursts.</td></tr></table>
+<br clear=right>
+<br><table width="600"><tr><td><img align="left" src="https://imgur.com/4aeQ15g.png"><b>PAPI</b> (パピィ)
+<br>Popee's father of unknown age. He's an eccentric and easygoing performer who likes to do things at his own pace. His mysterious behavior is a confusion to Popee. Popee doesn't believe that Papi is his real father and thinks his real father is elsewhere.</td></tr></table>
+<br cleaf=left>
+<br><table><tr><td width="300"><img src="https://imgur.com/ym9MZmO.png"><br><b>Frog</b> (カエル)<br>A relatively normal frog that settled into the circus before he knew it.</td><td width="300"><img src="https://imgur.com/Eov2NvT.png"><br><b>Paola</b> (パオラ)<br>Papi's car/pet. Her body is inorganic, but her head is alive. She gets along well with Kedamono but treats Popee coldly.</td></tr></table>
+
+<br><table><tr><td width="300"><img src="https://imgur.com/5zFc27O.png"><br><b>Audience</b> (観客)<br>Irresponsible spectators that are always watching the circus. They're just graffiti on a wall, however...</td><td width="300"><img src="https://imgur.com/9f3qOR7.png"><br><b>Alien</b> (宇宙人)<br>A gray alien that occassionally visits the circus.</td></tr></table>
+
+<br><table><tr><td width="300"><img src="https://imgur.com/lOU2bGI.png"><br><b>UFO Girls</b> (UFOガールズ)<br>A pair of girls that dance on TV. Watching them with fried chicken in hand are Kedamono's only moments of peace. They are said to have been dancing ever since the program first aired.</td><td width="300"><img src="https://imgur.com/AlUSWCT.png"><br><b>God</b> (神)<br>A giant and powerful stone head that sits outside the circus.</td></tr></table>
+
+<br><table><tr><td width="300"><img src="https://imgur.com/8ozNBvM.png"><br><b>Mirror Popee</b> (鏡ポピー)<br>A mirror version of Popee with the personality of Kedamono. Referred to by fans as Eepop.</td><td width="300"><img src="https://imgur.com/JUrORPp.png"><br><b>Mirror Kedamono</b> (鏡ケダモノ)<br>A mirror version of Kedamono with the personality of Popee. Referred to by fans as Onomadek.</td></tr></table>
+
+<br><table><tr><td width="300"><img src="https://imgur.com/44374qA.png"><br><b>White Wolf</b><br>A strange wolf that rarely appears. They are theorized to be Kedamono's mother, but this is not confirmed.</td><td width="300"><img src="https://imgur.com/rCkWwYA.png"><br><b>Marifa</b> (マリファ)<br>Popee's younger sister who never appears in the show. She's said to be a trickster and "probably" a girl.</td></tr></table>
+
+<h2>EPISODES</h2>
+<div id="spoiler" style="display:none">
+<table><tr><td>1.「MAGIC」(マジック)</td></tr>
+<tr bgcolor=#fee1e7><td>2.「LIMBO」(リンボー)</td></tr>
+<tr><td>3.「ACROBATICS」(曲芸)</td></tr>　
+<tr bgcolor=#feeae1><td>4.「KNIFE THROWER」(ナイフ投げ)</td></tr>
+<tr><td>5.「FIRE BREATHER」(火吹き)</td></tr>
+<tr bgcolor=#fefbe1><td>6.「PANTOMIME」(パントマイム)</td></tr>
+<tr><td>7.「KARATE SHOW」(空手ショー)</td></tr>
+<tr bgcolor=#f5fee1><td>8.「FIRE RING」(火の輪くぐり)</td></tr>
+<tr><td>9.「MIMIC」(ものまね)</td></tr>
+<tr bgcolor=#e1fefa><td>10.「GUNMAN」(ガンマン)</td></tr>
+<tr><td>11.「SWALLOWER」(飲み込み芸)</td></tr>
+<tr bgcolor=#fee1e7><td>12.「ESCAPE SHOW」(脱出劇)</td></tr>
+<tr><td>13.「DANCE」(ダンス)</td></tr>
+<tr bgcolor=#feeae1><td>14.「GREAT MAGIC」(グレートマジック)</td></tr>
+<tr><td>15.「MIRAGE」(しん気楼)</td></tr>
+<tr bgcolor=#fefbe1><td>16.「STOP THE GUN」(弾丸止め)</td></tr>
+<tr><td>17.「POISON」(毒薬)</td></tr>
+<tr bgcolor=#f5fee1><td>18.「ELEPHANT」(ゾウ)</td></tr>
+<tr><td>19.「DREAM」(夢)</td></tr>
+<tr bgcolor=#e1fefa><td>20.「HYPNOTISM」(催眠術)</td></tr>
+<tr><td>21.「SUPER STRENGTH」(怪力芸)</td></tr>
+<tr bgcolor=#fee1e7><td>22.「PREDICTION」(予言)</td></tr>
+<tr><td>23.「GHOST」(幽霊)</td></tr>
+<tr bgcolor=#feeae1><td>24.「MEDICINE」(くすり)</td></tr>
+<tr><td>25.「SAMURAI」(侍)</td></tr>
+<tr bgcolor=#fefbe1><td>26.「MONOCYCLE」(一輪車)</td></tr>
+<tr><td>27.「KNIFE GAME」(ナイフゲーム)</td></tr>
+<tr bgcolor=#f5fee1><td>28.「ALIEN」(異人)</td></tr>
+<tr><td>29.「DARK SIDE」(ダークサイド)</td></tr>
+<tr bgcolor=#e1fefa><td>30.「VS GOD」(敵は神様)</td></tr>
+<tr><td>31.「SLEEP」(眠り)</td></tr>
+<tr bgcolor=#fee1e7><td>32.「IN THE MIND」(心の中は)</td></tr>
+<tr><td>33.「MIRROR」(鏡の世界)</td></tr>
+<tr bgcolor=#feeae1><td>34.「OPENING」(オープニング)</td></tr>
+<tr><td>35.「MY CAR」(愛車)</td></tr>
+<tr bgcolor=#fefbe1><td>36.「ERASER」(消しゴム)</td></tr>
+<tr><td>37.「LONELINESS」(独り)</td></tr>
+<tr bgcolor=#f5fee1><td>38.「TIME」(時間)</td></tr>
+<tr><td>39.「FACE」(顔)</td></tr>
+</table></div><button title="click here to see a list of episodes!" type="button" onclick="if(document.getElementById('spoiler') .style.display=='none') {document.getElementById('spoiler') .style.display=''}else{document.getElementById('spoiler') .style.display='none'}">click here to see a list of episodes!</button>
+
+</td></tr></table></td><td width="50"><center><img src="https://imgur.com/V9iUFNc.png"><br><img src="https://imgur.com/V9iUFNc.png"><br><img src="https://imgur.com/V9iUFNc.png"><br><img src="https://imgur.com/V9iUFNc.png"><br><img src="https://imgur.com/V9iUFNc.png"><br><img src="https://imgur.com/V9iUFNc.png"><br><img src="https://imgur.com/V9iUFNc.png"></center></td></tr></table></center>
+
+<center><p><img id="map" src="https://imgur.com/LcGVFLA.png" usemap="#map" />
+ <map name="map">
+<map id='map' name='map'>
+    <area onmouseover="document.getElementById('map').src = 'https://imgur.com/6gD6mrU.png';" onmouseleave="document.getElementById('map').src = 'https://imgur.com/LcGVFLA.png';" href="/wolfzirkus.html" coords="1,0,287,164" shape="rect">
+</map></map></p></center>
+
+  </body>
+</html>

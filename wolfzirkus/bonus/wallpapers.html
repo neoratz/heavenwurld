@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  
+  <link rel="shortcut icon" type="image/png" href="https://imgur.com/wzORyyC.png"/>
+  
+  <script type='text/javascript'>
+
+
+//<![CDATA[
+var rate = 50;
+if (document.getElementById) 
+window.onerror=new Function("return true")
+
+var objActive; // The object which event occured in 
+var act = 0; // Flag during the action 
+var elmH = 0; // Hue 
+var elmS = 128; // Saturation 
+var elmV = 255; // Value 
+var clrOrg; // A color before the change 
+var TimerID; // Timer ID
+if (document.all) { 
+document.onmouseover = doRainbowAnchor; 
+document.onmouseout = stopRainbowAnchor; 
+} 
+else if (document.getElementById) { 
+document.captureEvents(Event.MOUSEOVER | Event.MOUSEOUT); 
+document.onmouseover = Mozilla_doRainbowAnchor; 
+document.onmouseout = Mozilla_stopRainbowAnchor; 
+}
+function doRainbow(obj) 
+{ 
+if (act == 0) { 
+act = 1; 
+if (obj) 
+objActive = obj; 
+else 
+objActive = event.srcElement; 
+clrOrg = objActive.style.color; 
+TimerID = setInterval("ChangeColor()",100); 
+} 
+}
+function stopRainbow() 
+{ 
+if (act) { 
+objActive.style.color = clrOrg; 
+clearInterval(TimerID); 
+act = 0; 
+} 
+}
+function doRainbowAnchor() 
+{ 
+if (act == 0) { 
+var obj = event.srcElement; 
+while (obj.tagName != 'A' && obj.tagName != 'BODY') { 
+obj = obj.parentElement; 
+if (obj.tagName == 'A' || obj.tagName == 'BODY') 
+break; 
+}
+if (obj.tagName == 'A' && obj.href != '') { 
+objActive = obj; 
+act = 1; 
+clrOrg = objActive.style.color; 
+TimerID = setInterval("ChangeColor()",100); 
+} 
+} 
+}
+function stopRainbowAnchor() 
+{ 
+if (act) { 
+if (objActive.tagName == 'A') { 
+objActive.style.color = clrOrg; 
+clearInterval(TimerID); 
+act = 0; 
+} 
+} 
+}
+function Mozilla_doRainbowAnchor(e) 
+{ 
+if (act == 0) { 
+obj = e.target; 
+while (obj.nodeName != 'A' && obj.nodeName != 'BODY') { 
+obj = obj.parentNode; 
+if (obj.nodeName == 'A' || obj.nodeName == 'BODY') 
+break; 
+}
+if (obj.nodeName == 'A' && obj.href != '') { 
+objActive = obj; 
+act = 1; 
+clrOrg = obj.style.color; 
+TimerID = setInterval("ChangeColor()",100); 
+} 
+} 
+}
+function Mozilla_stopRainbowAnchor(e) 
+{ 
+if (act) { 
+if (objActive.nodeName == 'A') { 
+objActive.style.color = clrOrg; 
+clearInterval(TimerID); 
+act = 0; 
+} 
+} 
+}
+function ChangeColor() 
+{ 
+objActive.style.color = makeColor(); 
+}
+function makeColor() 
+{ 
+// Don't you think Color Gamut to look like Rainbow?
+// HSVtoRGB 
+if (elmS == 0) { 
+elmR = elmV; elmG = elmV; elmB = elmV; 
+} 
+else { 
+t1 = elmV; 
+t2 = (255 - elmS) * elmV / 255; 
+t3 = elmH % 60; 
+t3 = (t1 - t2) * t3 / 60;
+if (elmH < 60) { 
+elmR = t1; elmB = t2; elmG = t2 + t3; 
+} 
+else if (elmH < 120) { 
+elmG = t1; elmB = t2; elmR = t1 - t3; 
+} 
+else if (elmH < 180) { 
+elmG = t1; elmR = t2; elmB = t2 + t3; 
+} 
+else if (elmH < 240) { 
+elmB = t1; elmR = t2; elmG = t1 - t3; 
+} 
+else if (elmH < 300) { 
+elmB = t1; elmG = t2; elmR = t2 + t3; 
+} 
+else if (elmH < 360) { 
+elmR = t1; elmG = t2; elmB = t1 - t3; 
+} 
+else { 
+elmR = 0; elmG = 0; elmB = 0; 
+} 
+}
+elmR = Math.floor(elmR).toString(16); 
+elmG = Math.floor(elmG).toString(16); 
+elmB = Math.floor(elmB).toString(16); 
+if (elmR.length == 1) elmR = "0" + elmR; 
+if (elmG.length == 1) elmG = "0" + elmG; 
+if (elmB.length == 1) elmB = "0" + elmB
+elmH = elmH + rate; 
+if (elmH >= 360) 
+elmH = 0;
+return '#' + elmR + elmG + elmB; 
+}
+//]]>
+</script>
+  
+    <style>
+    
+    
+    a:visited{
+  color:blue;
+}
+    a:link{
+  color:blue;
+}
+body {
+    background-image: url("https://imgur.com/HLionwO.png");
+    background-repeat: repeat;
+    background-attachment: scroll;
+    background-position: center;
+
+}
+
+
+
+</style>
+
+    <meta charset="UTF-8">
+    <title>wallpapers | L*O*V*E ↰</title>
+    <!-- The style.css file allows you to change the look of your web pages.
+         If you include the next line in all your web pages, they will all share the same look.
+         This makes it easier to make new pages for your site. -->
+    <link href="/style.css" rel="stylesheet" type="text/css" media="all">
+
+  </head>
+  
+  
+  <body>
+
+<center><p><img src="https://imgur.com/GMHeiNN.gif"><a href="/wolfzirkus/bonus.html">< return to bonus</a><img src="https://imgur.com/GMHeiNN.gif">
+<table width="800" bgcolor="white"><tr><td><center><h1>WALLPAPERS</h1>
+<font size="5"><b>OFFICIAL</b></font>
+<table><tr><td><center><font size="4">640x680</font><br><a href="https://imgur.com/ROctZxm.png"><img width="100" src="https://imgur.com/ROctZxm.png"></a> <a href="https://imgur.com/lPqMAgs.png"><img width="100" src="https://imgur.com/lPqMAgs.png"></a> <a href="https://imgur.com/x8j52aB.png"><img width="100" src="https://imgur.com/x8j52aB.png"></a> <a href="https://imgur.com/gFmQOvy.png"><img width="100" src="https://imgur.com/gFmQOvy.png"></a> <a href="https://imgur.com/gk1MZ5n.png"><img width="100" src="https://imgur.com/gk1MZ5n.png"></a> <a href="https://imgur.com/csd7oex.png"><img width="100" src="https://imgur.com/csd7oex.png"></a> <a href="https://imgur.com/dy5w35R.png"><img width="100" src="https://imgur.com/dy5w35R.png"></a>
+
+<br><a href="https://imgur.com/YEquB8s.png"><img width="100" src="https://imgur.com/YEquB8s.png"></a> <a href="https://imgur.com/S9mHQcC.png"><img width="100" src="https://imgur.com/S9mHQcC.png"></a> <a href="https://imgur.com/JhcL3Bk.png"><img width="100" src="https://imgur.com/JhcL3Bk.png"></a> <a href="https://imgur.com/g8kzTXr.png"><img width="100" src="https://imgur.com/g8kzTXr.png"></a> <a href="https://imgur.com/KUXgEJU.png"><img width="100" src="https://imgur.com/KUXgEJU.png"></a> <a href="https://imgur.com/Wp3ZQtm.png"><img width="100" src="https://imgur.com/Wp3ZQtm.png"></a> <a href="https://imgur.com/4A1wPF6.png"><img width="100" src="https://imgur.com/4A1wPF6.png"></a><br><a href="https://imgur.com/tNCRgeo.png"><img width="100" src="https://imgur.com/tNCRgeo.png"></a> <a href="https://imgur.com/3pV2MoY.png"><img width="100" src="https://imgur.com/3pV2MoY.png"></a> <a href="https://imgur.com/kK9EMhK.png"><img width="100" src="https://imgur.com/kK9EMhK.png"></a> <a href="https://imgur.com/t3Cuvy8.png"><img width="100" src="https://imgur.com/t3Cuvy8.png"></a> <a href="https://imgur.com/J2x6bPB.png"><img width="100" src="https://imgur.com/J2x6bPB.png"></a> <a href="https://imgur.com/zSkWwTy.png"><img width="100" src="https://imgur.com/zSkWwTy.png"></a> <a href="https://imgur.com/3f2t6yB.png"><img width="100" src="https://imgur.com/3f2t6yB.png"></a><br><a href="https://imgur.com/AYWJOfw.png"><img width="100" src="https://imgur.com/AYWJOfw.png"></a> <a href="https://imgur.com/FbMQ7Hj.png"><img width="100" src="https://imgur.com/FbMQ7Hj.png"></a> <a href="https://imgur.com/6WqiQPC.png"><img width="100" src="https://imgur.com/6WqiQPC.png"></a> <a href="https://imgur.com/Zxo8EzGC.png"><img width="100" src="https://imgur.com/Zxo8EzG.png"></a> <a href="https://imgur.com/xqRE6A1.png"><img width="100" src="https://imgur.com/xqRE6A1.png"></a> <a href="https://imgur.com/Q2A9JvS.png"><img width="100" src="https://imgur.com/Q2A9JvS.png"></a> <a href="https://imgur.com/G1LdJLC.png"><img width="100" src="https://imgur.com/G1LdJLC.png"></a><br>
+<a href="https://imgur.com/oWjQ5Yr.png"><img width="100" src="https://imgur.com/oWjQ5Yr.png"></a> <a href="https://imgur.com/NwmyWDU.png"><img width="100" src="https://imgur.com/NwmyWDU.png"></a> <a href="https://imgur.com/vKAyIDu.png"><img width="100" src="https://imgur.com/vKAyIDu.png"></a> <a href="https://imgur.com/wcoCV1s.png"><img width="100" src="https://imgur.com/wcoCV1s.png"></a> <a href="https://imgur.com/B01XBCM.png"><img width="100" src="https://imgur.com/B01XBCM.png"></a> <a href="https://imgur.com/sc5eUOx.png"><img width="100" src="https://imgur.com/sc5eUOx.png"></a> <a href="https://imgur.com/9pFMuLi.png"><img width="100" src="https://imgur.com/9pFMuLi.png"></a><br>
+<a href="https://imgur.com/aUub9fO.png"><img width="100" src="https://imgur.com/aUub9fO.png"></a> <a href="https://imgur.com/I4eRjU6.png"><img width="100" src="https://imgur.com/I4eRjU6.png"></a> <a href="https://imgur.com/Tl29fHJ.png"><img width="100" src="https://imgur.com/Tl29fHJ.png"></a> <a href="https://imgur.com/b67fYFg.png"><img width="100" src="https://imgur.com/b67fYFg.png"></a> <a href="https://imgur.com/jbelPg0.png"><img width="100" src="https://imgur.com/jbelPg0.png"></a> <a href="https://imgur.com/CpDecf7.png"><img width="100" src="https://imgur.com/CpDecf7.png"></a> <a href="https://imgur.com/H5dZ2GM.png"><img width="100" src="https://imgur.com/H5dZ2GM.png"></a>
+<br><a href="https://imgur.com/wP1Rs5q.png"><img width="100" src="https://imgur.com/wP1Rs5q.png"></a> <a href="https://imgur.com/607Hj2M.png"><img width="100" src="https://imgur.com/607Hj2M.png"></a> <a href="https://imgur.com/PrpBcQf.png"><img width="100" src="https://imgur.com/PrpBcQf.png"></a> <a href="https://imgur.com/Wu52pT9.png"><img width="100" src="https://imgur.com/Wu52pT9.png"></a>
+<p><font size="4">1024x768</font>
+<br><a href="https://imgur.com/vD313SF.png"><img width="100" src="https://imgur.com/vD313SF.png"></a> <a href="https://imgur.com/kZVNQW6.png"><img width="100" src="https://imgur.com/kZVNQW6.png"></a> <a href="https://imgur.com/t9feCBD.png"><img width="100" src="https://imgur.com/t9feCBD.png"></a> <a href="https://imgur.com/cZU7VjA.png"><img width="100" src="https://imgur.com/cZU7VjA.png"></a> <a href="https://imgur.com/LdjCmfT.png"><img width="100" src="https://imgur.com/LdjCmfT.png"></a> <a href="https://imgur.com/Kv5sLQU.png"><img width="100" src="https://imgur.com/Kv5sLQU.png"></a> <a href="https://imgur.com/8TJo54g.png"><img width="100" src="https://imgur.com/8TJo54g.png"></a>
+<br><a href="https://imgur.com/YKKg34Z.png"><img width="100" src="https://imgur.com/YKKg34Z.png"></a> <a href="https://imgur.com/YC2qG2A.png"><img width="100" src="https://imgur.com/YC2qG2A.png"></a> <a href="https://imgur.com/8WD3Ehb.png"><img width="100" src="https://imgur.com/8WD3Ehb.png"></a> <a href="https://imgur.com/zlNUIoc.png"><img width="100" src="https://imgur.com/zlNUIoc.png"></a> <a href="https://imgur.com/rgCTyq4.png"><img width="100" src="https://imgur.com/rgCTyq4.png"></a> <a href="https://imgur.com/J4A8K2V.png"><img width="100" src="https://imgur.com/J4A8K2V.png"></a> <a href="https://imgur.com/y2qjtxk.png"><img width="100" src="https://imgur.com/y2qjtxk.png"></a>
+
+<br><a href="https://imgur.com/yktcP6C.png"><img width="100" src="https://imgur.com/yktcP6C.png"></a> <a href="https://imgur.com/1DM4AGf.png"><img width="100" src="https://imgur.com/1DM4AGf.png"></a> <a href="https://imgur.com/FrWHFW1.png"><img width="100" src="https://imgur.com/FrWHFW1.png"></a> <a href="https://imgur.com/sn3I9kq.png"><img width="100" src="https://imgur.com/sn3I9kq.png"></a> <a href="https://imgur.com/apmuNKC.png"><img width="100" src="https://imgur.com/apmuNKC.png"></a> <a href="https://imgur.com/SZ2wvLy.png"><img width="100" src="https://imgur.com/SZ2wvLy.png"></a> <a href="https://imgur.com/jvdoDq7.png"><img width="100" src="https://imgur.com/jvdoDq7.png"></a>
+
+<br><a href="https://imgur.com/XcqlD54.png"><img width="100" src="https://imgur.com/XcqlD54.png"></a> <a href="https://imgur.com/w0LHciX.png"><img width="100" src="https://imgur.com/w0LHciX.png"></a> <a href="https://imgur.com/9xprDkr.png"><img width="100" src="https://imgur.com/9xprDkr.png"></a> <a href="https://imgur.com/FVUTicL.png"><img width="100" src="https://imgur.com/FVUTicL.png"></a> <a href="https://imgur.com/vYxTQs7.png"><img width="100" src="https://imgur.com/vYxTQs7.png"></a> <a href="https://imgur.com/6xqegtL.png"><img width="100" src="https://imgur.com/6xqegtL.png"></a> <a href="https://imgur.com/EK7KjM9.png"><img width="100" src="https://imgur.com/EK7KjM9.png"></a>
+
+<br><a href="https://imgur.com/qEWPJng.png"><img width="100" src="https://imgur.com/qEWPJng.png"></a> <a href="https://imgur.com/VX90fdm.png"><img width="100" src="https://imgur.com/VX90fdm.png"></a> <a href="https://imgur.com/r1QcX7R.png"><img width="100" src="https://imgur.com/r1QcX7R.png"></a> <a href="https://imgur.com/bzSrGm1.png"><img width="100" src="https://imgur.com/bzSrGm1.png"></a> <a href="https://imgur.com/wiySVz4.png"><img width="100" src="https://imgur.com/wiySVz4.png"></a> <a href="https://imgur.com/chtiWH9.png"><img width="100" src="https://imgur.com/chtiWH9.png"></a> <a href="https://imgur.com/hyL4maj.png"><img width="100" src="https://imgur.com/hyL4maj.png"></a>
+
+<br><a href="https://imgur.com/1xPJK1m.png"><img width="100" src="https://imgur.com/1xPJK1m.png"></a> <a href="https://imgur.com/FQ7YHF6.png"><img width="100" src="https://imgur.com/FQ7YHF6.png"></a> <a href="https://imgur.com/ZeghEQG.png"><img width="100" src="https://imgur.com/ZeghEQG.png"></a> <a href="https://imgur.com/qgOwUVX.png"><img width="100" src="https://imgur.com/qgOwUVX.png"></a> <a href="https://imgur.com/VgQE9NP.png"><img width="100" src="https://imgur.com/VgQE9NP.png"></a> <a href="https://imgur.com/oW4GHnq.png"><img width="100" src="https://imgur.com/oW4GHnq.png"></a> <a href="https://imgur.com/n9mqSX9.png"><img width="100" src="https://imgur.com/n9mqSX9.png"></a>
+<br><a href="https://imgur.com/HCPznGY.png"><img width="100" src="https://imgur.com/HCPznGY.png"></a> <a href="https://imgur.com/7oCIY95.png"><img width="100" src="https://imgur.com/7oCIY95.png"></a> <a href="https://imgur.com/a3oJ4be.png"><img width="100" src="https://imgur.com/a3oJ4be.png"></a> <a href="https://imgur.com/RMqvYut.png"><img width="100" src="https://imgur.com/RMqvYut.png"></a></center></td></tr></table>
+
+</center></td></tr></table></center>
+
+<center><p><img id="map" src="https://imgur.com/LcGVFLA.png" usemap="#map" />
+ <map name="map">
+<map id='map' name='map'>
+    <area onmouseover="document.getElementById('map').src = 'https://imgur.com/6gD6mrU.png';" onmouseleave="document.getElementById('map').src = 'https://imgur.com/LcGVFLA.png';" href="/wolfzirkus.html" coords="1,0,287,164" shape="rect">
+</map></map></p></center>
+
+  </body>
+</html>

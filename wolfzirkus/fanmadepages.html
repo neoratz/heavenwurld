@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  
+  <link rel="shortcut icon" type="image/png" href="https://imgur.com/wzORyyC.png"/>
+  
+  <script type='text/javascript'>
+
+
+//<![CDATA[
+var rate = 50;
+if (document.getElementById) 
+window.onerror=new Function("return true")
+
+var objActive; // The object which event occured in 
+var act = 0; // Flag during the action 
+var elmH = 0; // Hue 
+var elmS = 128; // Saturation 
+var elmV = 255; // Value 
+var clrOrg; // A color before the change 
+var TimerID; // Timer ID
+if (document.all) { 
+document.onmouseover = doRainbowAnchor; 
+document.onmouseout = stopRainbowAnchor; 
+} 
+else if (document.getElementById) { 
+document.captureEvents(Event.MOUSEOVER | Event.MOUSEOUT); 
+document.onmouseover = Mozilla_doRainbowAnchor; 
+document.onmouseout = Mozilla_stopRainbowAnchor; 
+}
+function doRainbow(obj) 
+{ 
+if (act == 0) { 
+act = 1; 
+if (obj) 
+objActive = obj; 
+else 
+objActive = event.srcElement; 
+clrOrg = objActive.style.color; 
+TimerID = setInterval("ChangeColor()",100); 
+} 
+}
+function stopRainbow() 
+{ 
+if (act) { 
+objActive.style.color = clrOrg; 
+clearInterval(TimerID); 
+act = 0; 
+} 
+}
+function doRainbowAnchor() 
+{ 
+if (act == 0) { 
+var obj = event.srcElement; 
+while (obj.tagName != 'A' && obj.tagName != 'BODY') { 
+obj = obj.parentElement; 
+if (obj.tagName == 'A' || obj.tagName == 'BODY') 
+break; 
+}
+if (obj.tagName == 'A' && obj.href != '') { 
+objActive = obj; 
+act = 1; 
+clrOrg = objActive.style.color; 
+TimerID = setInterval("ChangeColor()",100); 
+} 
+} 
+}
+function stopRainbowAnchor() 
+{ 
+if (act) { 
+if (objActive.tagName == 'A') { 
+objActive.style.color = clrOrg; 
+clearInterval(TimerID); 
+act = 0; 
+} 
+} 
+}
+function Mozilla_doRainbowAnchor(e) 
+{ 
+if (act == 0) { 
+obj = e.target; 
+while (obj.nodeName != 'A' && obj.nodeName != 'BODY') { 
+obj = obj.parentNode; 
+if (obj.nodeName == 'A' || obj.nodeName == 'BODY') 
+break; 
+}
+if (obj.nodeName == 'A' && obj.href != '') { 
+objActive = obj; 
+act = 1; 
+clrOrg = obj.style.color; 
+TimerID = setInterval("ChangeColor()",100); 
+} 
+} 
+}
+function Mozilla_stopRainbowAnchor(e) 
+{ 
+if (act) { 
+if (objActive.nodeName == 'A') { 
+objActive.style.color = clrOrg; 
+clearInterval(TimerID); 
+act = 0; 
+} 
+} 
+}
+function ChangeColor() 
+{ 
+objActive.style.color = makeColor(); 
+}
+function makeColor() 
+{ 
+// Don't you think Color Gamut to look like Rainbow?
+// HSVtoRGB 
+if (elmS == 0) { 
+elmR = elmV; elmG = elmV; elmB = elmV; 
+} 
+else { 
+t1 = elmV; 
+t2 = (255 - elmS) * elmV / 255; 
+t3 = elmH % 60; 
+t3 = (t1 - t2) * t3 / 60;
+if (elmH < 60) { 
+elmR = t1; elmB = t2; elmG = t2 + t3; 
+} 
+else if (elmH < 120) { 
+elmG = t1; elmB = t2; elmR = t1 - t3; 
+} 
+else if (elmH < 180) { 
+elmG = t1; elmR = t2; elmB = t2 + t3; 
+} 
+else if (elmH < 240) { 
+elmB = t1; elmR = t2; elmG = t1 - t3; 
+} 
+else if (elmH < 300) { 
+elmB = t1; elmG = t2; elmR = t2 + t3; 
+} 
+else if (elmH < 360) { 
+elmR = t1; elmG = t2; elmB = t1 - t3; 
+} 
+else { 
+elmR = 0; elmG = 0; elmB = 0; 
+} 
+}
+elmR = Math.floor(elmR).toString(16); 
+elmG = Math.floor(elmG).toString(16); 
+elmB = Math.floor(elmB).toString(16); 
+if (elmR.length == 1) elmR = "0" + elmR; 
+if (elmG.length == 1) elmG = "0" + elmG; 
+if (elmB.length == 1) elmB = "0" + elmB
+elmH = elmH + rate; 
+if (elmH >= 360) 
+elmH = 0;
+return '#' + elmR + elmG + elmB; 
+}
+//]]>
+</script>
+  
+    <style>
+    
+    
+    a:visited{
+  color:blue;
+}
+    a:link{
+  color:blue;
+}
+body {
+    background-image: url("https://imgur.com/ojs2DtK.png");
+    background-repeat: repeat;
+    background-attachment: scroll;
+    background-position: center;
+
+}
+
+
+
+</style>
+
+    <meta charset="UTF-8">
+    <title>fanmade pages | L*O*V*E ↰</title>
+    <!-- The style.css file allows you to change the look of your web pages.
+         If you include the next line in all your web pages, they will all share the same look.
+         This makes it easier to make new pages for your site. -->
+    <link href="/style.css" rel="stylesheet" type="text/css" media="all">
+
+  </head>
+  
+  
+  <body>
+
+<center><b><a href="/wolfzirkus/aboutpage.html">about the webpage</a> * <a href="/wolfzirkus/officialpages.html">official popee pages</a> * <a href="/wolfzirkus/fanmadepages.html">fanmade popee pages</a> * <a href="/wolfzirkus/credits.html">credits</a></b><p>
+
+<table><tr><td width="50"><center><img src="https://imgur.com/V9iUFNc.png"><br><img src="https://imgur.com/V9iUFNc.png"></center></td><td>
+
+<table width="800" bgcolor="white"><tr><td><center><h1>FANMADE POPEE PAGES</h1>
+<table><tr><td width="224"><img src="https://imgur.com/Ha8nOLv.png"></td><td width="400"><a href="https://web.archive.org/web/20020802222121/http://isweb37.infoseek.co.jp/play/popee/">https://web.archive.org/web/20020802222121/http://isweb37.infoseek.co.jp/play/popee/</a><br><b>『きろろ家』(きろろやと読む)へようこそ</b></td></tr>
+
+<tr><td width="224"><center><img src="https://imgur.com/qCaM8mF.png"></center></td><td width="400"><a href="https://web.archive.org/web/20021016000802/http://isweb37.infoseek.co.jp/play/popee/index.html">https://web.archive.org/web/20021016000802/http://isweb37.infoseek.co.jp/play/popee/index.html</a><br><b>『きろろ家』(きろろやと読む)へようこそ</b></td></tr>
+
+<tr><td width="224"><center><img src="https://imgur.com/aD0lsfk.gif"></center></td><td width="400"><a href="https://web.archive.org/web/20030319225642/http://takaomi.tripod.co.jp/">https://web.archive.org/web/20030319225642/http://takaomi.tripod.co.jp/</a><br><b>Poppy and beast / ポピーザぱフォーマーの情報サイト ポピーとケダモノ</b></td></tr>
+
+<tr><td width="224"><center><img src="https://imgur.com/Upa81f5.gif"> <img src="https://imgur.com/ahzWiHJ.gif"> <img src="https://imgur.com/oFSp72H.gif"><br><img src="https://imgur.com/vj25YO9.gif"> <img src="https://imgur.com/FDt6M3i.gif"> <img src="https://imgur.com/jo4DHjc.gif"></center></td><td width="400"><a href="https://web.archive.org/web/20030417131721/http://cell00.cool.ne.jp/pop/">https://web.archive.org/web/20030417131721/http://cell00.cool.ne.jp/pop/</a><br><b>Popee the Performer Alliance / ポピーザぱフォーマー同盟</b></td></tr>
+
+<tr><td width="224"><center><img src="https://imgur.com/zxgAY9d.jpg"></center></td><td width="400"><a href="https://web.archive.org/web/20030303212807/http://homepage3.nifty.com/PONE/popindex.html">https://web.archive.org/web/20030303212807/http://homepage3.nifty.com/PONE/popindex.html</a><br><b>PONE Library / ＰＯＮＥ　ライブラリ</b></td></tr>
+
+<tr><td width="224"><center><img src="https://imgur.com/YkhIIIc.png"></center></td><td width="400"><a href="https://web.archive.org/web/20021221181603/http://nagoya.cool.ne.jp/uerin/popee/">https://web.archive.org/web/20021221181603/http://nagoya.cool.ne.jp/uerin/popee/</a><br><b>私も ぽピ派</b></td></tr>
+
+<tr><td width="224"><center><img src="https://imgur.com/GCTbcsb.png"></center></td><td width="400"><a href="https://web.archive.org/web/20030422114802/http://mypage.odn.ne.jp/home/spica/">https://web.archive.org/web/20030422114802/http://mypage.odn.ne.jp/home/spica/</a><br><b>すぴかうえーぶさいと</b></td></tr>
+
+<tr><td width="224"><center><img src="https://imgur.com/VAPAGnT.gif"></center></td><td width="400"><a href="https://web.archive.org/web/20030415052710/http://www5d.biglobe.ne.jp/~megyu/popee.htm">https://web.archive.org/web/20030415052710/http://www5d.biglobe.ne.jp/~megyu/popee.htm</a></td></tr>
+
+<tr><td width="224"><center><img src="https://imgur.com/Us9Ipbn.gif"><br><img src="https://imgur.com/mReq1V8.gif"></center></td><td width="400"><a href="https://web.archive.org/web/20030406164326/http://www.goku-raku.com/dame/popee_f.htm">https://web.archive.org/web/20030406164326/http://www.goku-raku.com/dame/popee_f.htm</a><br><b>DAME Project/MPM Cosplay Gallery</b></td></tr>
+
+<tr><td width="224"><center><img src="https://imgur.com/5QGpg1b.gif"></center></td><td width="400"><a href="https://web.archive.org/web/20030410192912/http://cin.loops.jp/popee.htm">https://web.archive.org/web/20030410192912/http://cin.loops.jp/popee.htm</a><br><b>POPEE the Performer Alliance / POPEE　the ぱ　フォーマー同盟</b></td></tr></table>
+
+</center></td></tr></table></td><td width="50"><center><img src="https://imgur.com/V9iUFNc.png"><br><img src="https://imgur.com/V9iUFNc.png"></center></td></tr></table></center>
+
+<center><p><img id="map" src="https://imgur.com/LcGVFLA.png" usemap="#map" />
+ <map name="map">
+<map id='map' name='map'>
+    <area onmouseover="document.getElementById('map').src = 'https://imgur.com/6gD6mrU.png';" onmouseleave="document.getElementById('map').src = 'https://imgur.com/LcGVFLA.png';" href="/wolfzirkus.html" coords="1,0,287,164" shape="rect">
+</map></map></p></center>
+
+  </body>
+</html>

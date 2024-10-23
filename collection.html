@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html>
+  <head>
+<meta name="viewport" content="width=1366, initial-scale=1">
+  <link rel="shortcut icon" type="image/png" href="https://i.imgur.com/HTdCuTH.png"/>
+  
+  <script type='text/javascript'>
+//<![CDATA[
+var rate = 50;
+if (document.getElementById) 
+window.onerror=new Function("return true")
+
+var objActive; // The object which event occured in 
+var act = 0; // Flag during the action 
+var elmH = 0; // Hue 
+var elmS = 128; // Saturation 
+var elmV = 255; // Value 
+var clrOrg; // A color before the change 
+var TimerID; // Timer ID
+if (document.all) { 
+document.onmouseover = doRainbowAnchor; 
+document.onmouseout = stopRainbowAnchor; 
+} 
+else if (document.getElementById) { 
+document.captureEvents(Event.MOUSEOVER | Event.MOUSEOUT); 
+document.onmouseover = Mozilla_doRainbowAnchor; 
+document.onmouseout = Mozilla_stopRainbowAnchor; 
+}
+function doRainbow(obj) 
+{ 
+if (act == 0) { 
+act = 1; 
+if (obj) 
+objActive = obj; 
+else 
+objActive = event.srcElement; 
+clrOrg = objActive.style.color; 
+TimerID = setInterval("ChangeColor()",100); 
+} 
+}
+function stopRainbow() 
+{ 
+if (act) { 
+objActive.style.color = clrOrg; 
+clearInterval(TimerID); 
+act = 0; 
+} 
+}
+function doRainbowAnchor() 
+{ 
+if (act == 0) { 
+var obj = event.srcElement; 
+while (obj.tagName != 'A' && obj.tagName != 'BODY') { 
+obj = obj.parentElement; 
+if (obj.tagName == 'A' || obj.tagName == 'BODY') 
+break; 
+}
+if (obj.tagName == 'A' && obj.href != '') { 
+objActive = obj; 
+act = 1; 
+clrOrg = objActive.style.color; 
+TimerID = setInterval("ChangeColor()",100); 
+} 
+} 
+}
+function stopRainbowAnchor() 
+{ 
+if (act) { 
+if (objActive.tagName == 'A') { 
+objActive.style.color = clrOrg; 
+clearInterval(TimerID); 
+act = 0; 
+} 
+} 
+}
+function Mozilla_doRainbowAnchor(e) 
+{ 
+if (act == 0) { 
+obj = e.target; 
+while (obj.nodeName != 'A' && obj.nodeName != 'BODY') { 
+obj = obj.parentNode; 
+if (obj.nodeName == 'A' || obj.nodeName == 'BODY') 
+break; 
+}
+if (obj.nodeName == 'A' && obj.href != '') { 
+objActive = obj; 
+act = 1; 
+clrOrg = obj.style.color; 
+TimerID = setInterval("ChangeColor()",100); 
+} 
+} 
+}
+function Mozilla_stopRainbowAnchor(e) 
+{ 
+if (act) { 
+if (objActive.nodeName == 'A') { 
+objActive.style.color = clrOrg; 
+clearInterval(TimerID); 
+act = 0; 
+} 
+} 
+}
+function ChangeColor() 
+{ 
+objActive.style.color = makeColor(); 
+}
+function makeColor() 
+{ 
+// Don't you think Color Gamut to look like Rainbow?
+// HSVtoRGB 
+if (elmS == 0) { 
+elmR = elmV; elmG = elmV; elmB = elmV; 
+} 
+else { 
+t1 = elmV; 
+t2 = (255 - elmS) * elmV / 255; 
+t3 = elmH % 60; 
+t3 = (t1 - t2) * t3 / 60;
+if (elmH < 60) { 
+elmR = t1; elmB = t2; elmG = t2 + t3; 
+} 
+else if (elmH < 120) { 
+elmG = t1; elmB = t2; elmR = t1 - t3; 
+} 
+else if (elmH < 180) { 
+elmG = t1; elmR = t2; elmB = t2 + t3; 
+} 
+else if (elmH < 240) { 
+elmB = t1; elmR = t2; elmG = t1 - t3; 
+} 
+else if (elmH < 300) { 
+elmB = t1; elmG = t2; elmR = t2 + t3; 
+} 
+else if (elmH < 360) { 
+elmR = t1; elmG = t2; elmB = t1 - t3; 
+} 
+else { 
+elmR = 0; elmG = 0; elmB = 0; 
+} 
+}
+elmR = Math.floor(elmR).toString(16); 
+elmG = Math.floor(elmG).toString(16); 
+elmB = Math.floor(elmB).toString(16); 
+if (elmR.length == 1) elmR = "0" + elmR; 
+if (elmG.length == 1) elmG = "0" + elmG; 
+if (elmB.length == 1) elmB = "0" + elmB
+elmH = elmH + rate; 
+if (elmH >= 360) 
+elmH = 0;
+return '#' + elmR + elmG + elmB; 
+}
+//]]>
+</script>
+  
+    <style>
+    
+    a:visited{
+  color:pink;
+}
+    a:link{
+  color:pink;
+}
+body {
+    background-image: url("https://imgur.com/L2iNB2R.gif");
+    background-repeat: repeat;
+    background-position: center;
+}
+
+.sidenav {
+  height: 100%;
+  width: 15%;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+
+  overflow-x: hidden;
+  padding-top: 20px;
+  background-repeat: repeat;
+  background-size: 300px;
+}
+
+.sidenav a {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 25px;
+  display: inline;
+}
+
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+.main {
+  margin-left: 160px; /* Same as the width of the sidenav */
+  font-size: 20px; /* Increased text to enable scrolling */
+  padding: 0px 10px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+
+</style>
+
+    <meta charset="UTF-8">
+    <title>my collection</title>
+    <!-- The style.css file allows you to change the look of your web pages.
+         If you include the next line in all your web pages, they will all share the same look.
+         This makes it easier to make new pages for your site. -->
+    <link href="/style.css" rel="stylesheet" type="text/css" media="all">
+  </head>
+  
+  
+  <body>
+
+<meta name="viewport" content="width=1366, initial-scale=1">
+
+
+<div class="sidenav">
+<center><font face="comic sans ms, comic, chalkboardse-regular" size="5"><a href="/xtras.html">< back</a></font>
+<br><iframe width="110" height="100" src="https://www.youtube.com/embed/?listType=playlist&list=PLW5ln-BGVAnP1RN5-x807QXW8BzbWZUs6&autoplay=1" frameborder="0" allowfullscreen></iframe></center>
+</div>
+
+<div class="main">
+  <center><h1><font face = "Comic Sans MS, comic, chalkboardse-regular" size="8">my collection</font></h1></center>
+<center><img width="800px" style="border:5px solid pink" src="https://imgur.com/mLM4IdU.png">
+<center><font face="comic sans ms, comic, chalkboardse-regular" size="5">img taken 1/8/2020</font>
+<p><center><img width="800px" style="border:5px solid pink" src="https://imgur.com/AcaQ4L9.jpg">
+<center><font face="comic sans ms, comic, chalkboardse-regular" size="5">img taken 3/17/2020</font>
+<p><table width="600px" cellpadding="10" bgcolor="white"><tr><td><center>this is the top shelf of my bookshelf! it's probably my favorite figure setup at the time of writing this. it's surrounded by a bunch of how to draw manga books i got ages 9-12 :P INCLUDING the giant christopher hart book that's like a big compilation of all his how to draw manga books and it sucks so bad. fortunately for you it is off camera
+</center></td></tr></table>
+<p><img width="800px" style="border:5px solid pink" src="https://imgur.com/bh3ilRe.png">
+<center><font face="comic sans ms, comic, chalkboardse-regular" size="5">img taken 1/8/2020</font>
+<p><table width="600px" cellpadding="10" bgcolor="white"><tr><td><center>all my big my melody (and 1 kuromi...) plushes on the side of my bed ^_^ pics realy do not do them justice, the red melo is the height of like three peoples heads
+</center></td></tr></table>
+<p><img width="800px" style="border:5px solid pink" src="https://imgur.com/ohORIGY.png">
+<center><font face="comic sans ms, comic, chalkboardse-regular" size="5">img taken 1/8/2020</font>
+<p><table width="600px" cellpadding="10" bgcolor="white"><tr><td><center>this is the top shelf of my bed :D it has almost as many things as i could fit on it... it's hard to say with 100% certainty wat my favorite thing here is!!!!! i've been sitting here for a few mins trying to think of what i'd pick if i had to pick and i just CAN'T..... i love them all so much :'( btw the pikachu is a bank my cousin got me for christmas a few years ago and the my melody pez next to it was a gift from my mom christmas 2019! (last christmas at the time of writing this...) it came with pez candy but i ate them out of the wrapper instead of putting them into the dispenser because i didn't want to get her dirty with pez dust on accident.
+</center></td></tr></table>
+<p><img width="800px" style="border:5px solid pink" src="https://imgur.com/F1DBAjh.png">
+<center><font face="comic sans ms, comic, chalkboardse-regular" size="5">img taken 1/9/2020</font>
+<p><table width="600px" cellpadding="10" bgcolor="white"><tr><td><center>my charlotte corner :3 this is where i put all my charlotte plushes but i am starting to run out of space!!! one day i will have one of every charlotte plush in existence >:D my favorite of these is probably the transforming one that's farthest to the right even though i always keep her in her small form! also the one with button eyes is special cuz zen got her for me... (●´□`)♡
+</center></td></tr></table>
+
+<p><img width="800px" style="border:5px solid pink" src="https://imgur.com/NbGY8ZY.png">
+<center><font face="comic sans ms, comic, chalkboardse-regular" size="5">img taken 10/3/2020</font>
+<p><table width="600px" cellpadding="10" bgcolor="white"><tr><td><center>a little spot i'm slowly building up, the 2nd highest shelf on my big bookshelf! after really liking how the neopets faerieland playset looked on my shelf i bought this animal jam playset last year and it fit on my shelf great! the disco ball spins and the lights flash and it plays music and everything. it was a DEAL! nagisa happened to fit right in under the disco ball too. her base is like the perfect size for it!!!!! rena is actually my most recent figure, she was really cheap because she has some marks and is missing her hatchet. i put a pinky st wand in her hand instead! also the charlotte pile up figures are SOME OF MY FAVORITE FIGURES EVER AND IM SO HAPPY I COULD GET THEM ;_;
+</center></td></tr></table></center>
+</div>
+
+
+  </body>
+</html>

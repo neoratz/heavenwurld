@@ -1,0 +1,190 @@
+a:link {
+  text-decoration: underline;
+  color: #ff808c;
+}
+
+a:visited {
+  color: #ff808c;
+}
+
+a:hover {
+  color:  #ff4a5b;
+  text-decoration: none;
+}
+
+
+
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #ffffff;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #ffe6b3;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #ffe680;
+}
+
+/* fonts */
+
+@font-face {
+    font-family: "strawberrymuffins";
+    src: url("/fonts/BalsamiqSans-Regular.woff2") format("woff2"),
+         url("/fonts/BalsamiqSans-Regular.woff") format("woff");
+}
+
+@font-face {
+    font-family: "porkys";
+    src: url("/fonts/porkys.woff2") format("woff2"),
+         url("/fonts/porkys.woff") format("woff");
+}
+
+body {
+  overflow-x: hidden;
+  letter-spacing: 1px;
+
+  
+}
+
+
+
+
+
+
+/* main containers */
+  
+  
+  .updateslog {
+    width: 660px;
+  height: 100px;
+  border: 5px dashed #ffe6b3;
+  overflow-x: break-word;
+  overflow-y: auto;
+list-style: none;
+}
+  
+  .maincontainer{
+position: relative; 
+  display: flex;
+  align-items:flex-start;
+  margin:auto;
+  min-width: 1100px;
+  justify-content: center;
+  flex-direction: row;
+    font-size: 20px;
+  }
+  
+  .audiobox {
+    width: 100px;
+}
+
+table, tr, td {
+   margin: 0;
+}
+
+.mainbox {
+    border: 9px solid #ffe6b3;
+      font-family: "strawberrymuffins";
+      color: #992b2f;
+      font-size:18px;
+        overflow-wrap: break-word;
+        border-collapse: collapse;
+        margin: 0px;
+        background-color:white;
+        
+}
+.sparklelink a:hover {
+  background:url("/images/small%20pics/yellow%20sparkles.gif");
+}
+.mainbox td {
+  padding: 5px;
+}
+
+.mainboxBORDER {
+    border-right: 5px solid #ffe6b3;
+    border-left: 5px solid #ffe6b3;
+    border-bottom: 5px solid #ffe6b3;
+}
+
+.headscroll {
+    border-right: 9px solid #ffe6b3;
+    border-left: 9px solid #ffe6b3;
+          font-family: "strawberrymuffins";
+      color: #992b2f;
+      font-size:18px;
+        border-collapse: collapse;
+        margin: 0px;
+        background-color:white;
+        display:block;
+        width:936px;
+        padding-top: 2px;
+}
+
+.spanginghambg {
+background:url(/images/gingham%20bg%20big.png) repeat top left;
+}
+
+.thoughtbubbleabout {
+   display: block;
+  height: 230px;
+  width: 230px;
+  overflow-x: break-word;
+  overflow-y: scroll;
+}
+
+.bottombubble {
+   display: block;
+  height: 111px;
+  width: 912px;
+  overflow-x: break-word;
+  overflow-y: hidden;
+  font-family: "strawberrymuffins";
+      color: #992b2f;
+      font-size:18px;
+}
+
+.quizresult {
+   display: block;
+  width: 600px;
+  overflow-x: break-word;
+  overflow-y: scroll;
+}
+
+.atsclass {
+   border: 2px solid #ffe6b3;
+}
+
+:root{
+  scrollbar-color: #ffe6b3 #FFFFFF !important;
+  scrollbar-width: thin !important;
+}
+
+.clockbox {
+  align-items:center;
+  justify-content:center;
+}
+.clock {
+  height: 216px;
+  width: 216px;
+  background-image: url("/images/homepage/face2.gif");
+  background-repeat:no-repeat;
+}
+.hour, .min, .nose {
+  position:absolute;
+}
+
+/* flavor text style */
+.flavorText {
+          font-family: "strawberrymuffins";
+      color: #992b2f;
+      font-size:18px;
+}
