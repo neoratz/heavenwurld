@@ -8,13 +8,13 @@ a:visited {
 }
 
 a:hover {
-  color: #bcd7a2;
+  color: #ff4a5b;
   text-decoration: none;
   
 }
 
 ::-webkit-scrollbar {
-  width: 5px;
+  width: 10px;
 }
 
 /* Track */
@@ -31,7 +31,7 @@ a:hover {
 ::-webkit-scrollbar-thumb:hover {
   background: #ffe680;
 }
-::root {
+:root{
   scrollbar-color: #fff0c8 #FFFFFF !important;
   scrollbar-width: thin !important;
   --backgroundSize: 105px;
@@ -69,8 +69,7 @@ body {
   position: relative;
   top: 0;
   left: 0;
-  width: 90vw;
-  max-width:950px;
+  width: 92vw;
 }
 .main {
   position: relative;

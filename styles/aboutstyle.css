@@ -32,7 +32,7 @@ a:hover {
     background: #ffe680;
 }
 
-::root {
+:root {
     scrollbar-color: #fff0c8 #FFFFFF !important;
     scrollbar-width: thin !important;
     --backgroundSize: 105px;
@@ -79,8 +79,7 @@ body {
     position: relative;
     top: 0;
     left: 0;
-    width: 90vw;
-    max-width:950px;
+    width: 92vw;
 }
 
 .main {
