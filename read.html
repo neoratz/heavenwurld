@@ -5,46 +5,63 @@
     <meta charset="UTF-8">
     <meta name="description" content="(more than) your daily recommended sugar intake">
     <title>neo's HEAVENWURLD ଘ(ˊ_ˋ)</title>
-    <link href="styles/aboutstyle.css" rel="stylesheet" type="text/css" media="all">
+    <link href="styles/etcstyle.css" rel="stylesheet" type="text/css" media="all">
     <link rel="shortcut icon" href="https://i.imgur.com/HTdCuTH.png">
-
+    <meta name="viewport" content="width=1920px" />
 
 </head>
 
 <body>
     <center>
-        <div class="parent"><div class="sidebuttons">
-            <div class="fbutton1"><a href="https://neo.heavenwurld.net/"><img src="images/home/fbutton1.png" onmouseover="this.src='images/home/fbutton1L.png';" onmouseout="this.src='images/home/fbutton1.png';" width="30%"></a></div>
-            <div class="fbutton2"><a href="/about"><img src="images/home/fbutton2.png" onmouseover="this.src='images/home/fbutton2L.png';" onmouseout="this.src='images/home/fbutton2.png';" width="33%"></a></div>
-            <div class="fbutton3"><a href="/explore"><img src="images/home/fbutton3.png" onmouseover="this.src='images/home/fbutton3L.png';" onmouseout="this.src='images/home/fbutton3.png';" width="27%"></a></div>
-            <div class="fbutton4"><a href="/read"><img src="images/home/fbutton4.png" onmouseover="this.src='images/home/fbutton4L.png';" onmouseout="this.src='images/home/fbutton4.png';" width="27%"></a></div>
-            <div class="fbutton5"><a href="/fun"><img src="images/home/fbutton5.png" onmouseover="this.src='images/home/fbutton5L.png';" onmouseout="this.src='images/home/fbutton5.png';" width="31%"></a></div>
-            <div class="fbutton6"><a href="/links"><img src="images/home/fbutton6.png" onmouseover="this.src='images/home/fbutton6L.png';" onmouseout="this.src='images/home/fbutton6.png';" width="25.8%"></a></div>
-            <div class="fbutton7"><a href="/art"><img src="images/home/fbutton72.png" onmouseover="this.src='images/home/fbutton72L.png';" onmouseout="this.src='images/home/fbutton72.png';" width="30%"></a></div>
-            </div>
-            <section class="clockbox">
-                <div class="clock">
+
+        <div class="parent">
+            <div class="clock">
                 <div class="min"><img src="images/home/c big hand.png" width="9%"></div>
                 <div class="hour"><img src="images/home/c little hand.png" width="9%"></div>
                 <div class="nose"><img src="images/home/c nose.png" width="9%"></div>
-                </div>
-               </section>
-                <script src="/scripts/clock.js"></script>
-               <div class="timebox"><span id="wawatime"></span></div>
-               <script src="scripts/time.js"></script>
-               <div class ="bannertext"><marquee width="100%"><span class="flavorText"></span>
-                <script src="scripts/flavorText.js"></script></marquee></div>
+            </div>
+            <script src="/scripts/clock.js"></script>
+            <div class="timebox"><span id="wawatime"></span> HST</div>
+            <script src="scripts/time.js"></script>
+            <div class="bannertext">
+                <marquee width="100%"><span class="flavorText"></span>
+                    <script src="scripts/flavorText.js"></script>
+                </marquee>
+            </div>
+            <img id="map" class="fruitButtons" src="images/home/fruit buttons.png" usemap="#map" width="140px">
+            <map name="map" id="map">
+                <area onmouseover="document.getElementById('map').src = 'images/home/fruit1.png';"
+                    onmouseleave="document.getElementById('map').src = 'images/home/fruit buttons.png';"
+                    href="https://neo.heavenwurld.net/" coords="106,30,29" shape="circle">
+                <area onmouseover="document.getElementById('map').src = 'images/home/fruit2.png';"
+                    onmouseleave="document.getElementById('map').src = 'images/home/fruit buttons.png';" href="/about"
+                    coords="37,64,33" shape="circle">
+                <area onmouseover="document.getElementById('map').src = 'images/home/fruit3.png';"
+                    onmouseleave="document.getElementById('map').src = 'images/home/fruit buttons.png';" href="/explore"
+                    coords="102,107,25" shape="circle">
+                <area onmouseover="document.getElementById('map').src = 'images/home/fruit4.png';"
+                    onmouseleave="document.getElementById('map').src = 'images/home/fruit buttons.png';" href="/read"
+                    coords="28,173,29" shape="circle">
+                <area onmouseover="document.getElementById('map').src = 'images/home/fruit5.png';"
+                    onmouseleave="document.getElementById('map').src = 'images/home/fruit buttons.png';" href="/fun"
+                    coords="106,219,28" shape="circle">
+                <area onmouseover="document.getElementById('map').src = 'images/home/fruit6.png';"
+                    onmouseleave="document.getElementById('map').src = 'images/home/fruit buttons.png';" href="/art"
+                    coords="110,308,28" shape="circle">
+                <area onmouseover="document.getElementById('map').src = 'images/home/fruit7.png';"
+                    onmouseleave="document.getElementById('map').src = 'images/home/fruit buttons.png';" href="/links"
+                    coords="28,301,24" shape="circle">
+            </map>
+            <a href="https://neo.heavenwurld.net/"><img class="logo" src="images/home/logo.png" width="180px"></a>
             <img class="main" src="images/home/frame.png" />
             <img class="sidebar" src="images/home/sidebar.png" />
             <img class="neo" src="images/home/neo nurse.png">
-            <a href="https://neo.heavenwurld.net/"><img class="logo" src="images/home/logo.png" width="20%"></a>
             <div class="content">
            <div class="box4"><span class="htext">ଘ( HEAVENLY SCRIPTURES )</span>
-<br>Diary - Shrines - Anime -  Virtual World Tourism
+stuff to read coming soon...
 </div>
-          </div>
-          <div class="closer">ଘ neoratz © 2018 -> forever</div>
+            </div>
+            <div class="closer">ଘ neoratz ♡ 2018 -> forever</div>
+        </div>
     </center>
-</body>
-
-</html>
+    </section>

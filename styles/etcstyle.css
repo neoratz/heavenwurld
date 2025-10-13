@@ -148,7 +148,8 @@ body {
   top: 281px;
   left: 173px;
   font-size: 14px;
-  overflow: hidden;
+  overflow-y: scroll;
+  overflow-x:hidden;
 
 }
 
@@ -351,6 +352,11 @@ body {
   margin: 0 auto;
 }
 
+.special {
+    color: #ffabac;
+    background-image: url(/images/home/yellow-sparkles.gif);
+}
+
 .boxcon {
   align-items: center;
   justify-content: space-evenly;
@@ -359,15 +365,15 @@ body {
 }
 
 .box2 {
-  width: 190px;
-  height: 140px;
+  width: 110px;
+  height: 20px;
   padding: 5px;
   background-color: white;
 }
 
 .box2out {
-  width: 200px;
-  height: 150px;
+  width: 130px;
+  height: 30px;
   background: url(/images/home/bggreen.png);
   background-size: 10px;
   padding: 7px;
@@ -376,9 +382,10 @@ body {
 }
 
 .box3 {
-  width: 100px;
-  height: 150px;
-  margin: 10px;
+    border-bottom: 1px dashed #d0eeb4;
+    border-left: 1px dashed #d0eeb4;
+    border-right: 1px dashed #d0eeb4;
+    width:142px;
 }
 
 .closer {
@@ -394,11 +401,208 @@ body {
   font-size: 14px;
 }
 
-.todo {
-  width: 70px;
-  height: 30px;
-  padding: 5px;
-  margin: 10px;
-  background-color: white;
-  border: 7px solid #ffd6d2;
+.box4 {
+    width: 90%;
+    padding: 5px;
+    margin: 10px;
+    background-color: white;
+    border: 7px solid #ffd6d2;
+}
+
+.quizres {
+    border: 1px solid #ffd6d2;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    width:100%;
+    height:10cqw;
+}
+
+.quizres img {
+    width:100%
+}
+
+.love tr {
+    background: #fff0c8;
+    justify-content: left;
+    align-items: left;
+    text-align: left;
+    color: #ffd4a6;
+}
+
+.love td:nth-child(even) {
+    background: #ffd6d2;
+    color: #c96473;
+}
+
+.love th {
+    color: #ffd4a6;
+    padding: 0.5cqw;
+}
+
+.love {
+    border-right: 1px dashed #fff0c8;
+    border-bottom: 1px dashed #fff0c8;
+    width: 100%;
+}
+
+.about tr {
+    background: #ffd6d2;
+    justify-content: left;
+    align-items: left;
+    text-align: left;
+    color: #ffabac;
+}
+
+.about td:nth-child(even) {
+    background: #fff0c8;
+    color: #c96473;
+}
+
+.about th {
+    color: #ffabac;
+    padding: 0.5cqw;
+}
+
+.about {
+    border-right: 1px dashed #ffd6d2;
+    border-bottom: 1px dashed #ffd6d2;
+    width: 100%;
+}
+
+.linkz td,
+.linkz td * {
+    vertical-align: top;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+}
+
+.link1 tr {
+    background: #fff8e5;
+    ;
+    justify-content: left;
+    align-items: left;
+    text-align: left;
+}
+
+.link1 tr:nth-child(even) {
+    background: #fff0c8;
+}
+
+.link1 th {
+    background: #ffd6d2;
+    color: #ffabac;
+    padding: 5px;
+}
+
+.link1 {
+    border-right: 1px dashed #ffd6d2;
+    border-bottom: 1px dashed #ffd6d2;
+}
+
+.link1 img,
+.link2 img,
+.link3 img {
+    max-width: 70px;
+    max-height:32px;
+    image-rendering: pixelated;
+    width: 100%;
+}
+
+.link2 tr {
+    background: #fff0c8;
+    ;
+    justify-content: left;
+    align-items: left;
+    text-align: left;
+}
+
+.link2 tr:nth-child(even) {
+    background: #fff8e5;
+}
+
+.link2 th {
+    background: #d0eeb4;
+    color: #bcd7a2;
+    padding: 5px;
+}
+
+.link2 {
+    border-right: 1px dashed #d0eeb4;
+    border-bottom: 1px dashed #d0eeb4;
+}
+
+@-webkit-keyframes snowflakes-fall {
+    0% {
+        right: -10%
+    }
+
+    100% {
+        right: 100%
+    }
+}
+
+@-webkit-keyframes snowflakes-shake {
+
+    0%,
+    100% {
+        -webkit-transform: translateY(0);
+        transform: translateY(0)
+    }
+
+    50% {
+        -webkit-transform: translateY(80px);
+        transform: translateY(50px)
+    }
+}
+
+@keyframes snowflakes-fall {
+    0% {
+        right: -10%,
+    }
+
+    100% {
+        right: 100%
+    }
+}
+
+
+@keyframes snowflakes-shake {
+
+    0%,
+    100% {
+        transform: translateY(0)
+    }
+
+    50% {
+        transform: translateY(90px)
+    }
+}
+
+.snowflake {
+    position: absolute;
+    right: -10%;
+    top: 30%;
+    z-index: 9;
+    -webkit-animation-name: snowflakes-fall, snowflakes-shake;
+    -webkit-animation-duration: 10s, 3s;
+    -webkit-animation-timing-function: linear, ease-in-out;
+    -webkit-animation-iteration-count: infinite, infinite;
+    -webkit-animation-play-state: running, running;
+    animation-name: snowflakes-fall, snowflakes-shake;
+    animation-duration: 10s, 3s;
+    animation-timing-function: linear, ease-in-out;
+    animation-iteration-count: infinite, infinite;
+    animation-play-state: running, running;
+    pointer-events:auto;
+}
+
+.snowflake:nth-of-type(0) {
+    top: 1%;
+    -webkit-animation-delay: 0s, 0s;
+    animation-delay: 0s, 0s
+}
+
+.snowflake img {
+    width:50%
 }
