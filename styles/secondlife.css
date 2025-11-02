@@ -95,6 +95,14 @@ text-shadow: -1px 0 #ffabac, 0 1px #ffabac, 1px 0 #ffabac, 0 -1px #ffabac;
   border-top-left-radius: 0.4cqw;
     border-top-right-radius: 0.4cqw;
 }
+.invhead {
+  background-color: #ffd6d2;
+color: #ffabac;
+border-left: 2px solid #ffabac;
+border-right: 2px solid #ffabac;
+border-top: 1px solid #ffabac;
+margin-top:-1px;
+}
 
 .pagehead {
     background: #ffd6d2;
@@ -273,4 +281,87 @@ border-spacing: 2vw 0;
 
 .smalink a:hover {
     color: #bcd7a2;
+}
+
+.inventory {
+    width: 14%;
+    height: 55%;
+      position: absolute;
+  top: 10%;
+  left:0;
+  z-index:2;
+  overflow:hidden;
+}
+
+.invbox {
+    background-color:white;
+    border-top:1px solid #ffabac;
+    border-bottom:2px solid #ffabac;
+    border-left:2px solid #ffabac;
+    border-right:2px solid #ffabac;
+        overflow-y:scroll;
+        overflow-x:hidden;
+        padding:1%;
+        z-index:1;
+        height:85%;
+        width:100;
+        font-size: 1cqw;
+}
+
+.invbox img {
+  width:10%;
+  margin-right:0.2cqw;
+}
+
+.folder {
+margin-left:2em;
+display:inline-block;
+width:100%;
+}
+
+.about tr {
+    background: #ffd6d2;
+    justify-content: left;
+    align-items: left;
+    text-align: left;
+    color: #ffabac;
+}
+
+.about td:nth-child(even) {
+    background: #fff0c8;
+    color: #c96473;
+}
+
+.about th {
+    color: #ffabac;
+    padding: 0.5cqw;
+}
+
+.about {
+    border-right: 1px dashed #ffd6d2;
+    border-bottom: 1px dashed #ffd6d2;
+    width: 100%;
+}
+
+.special {
+    color: #ffabac;
+    background-image: url(/images/home/yellow-sparkles.gif);
+}
+
+.htext {
+  font-family: porkys;
+  color: #ffabac;
+  font-size: 1.8cqw;
+  display: block;
+  margin: 0 auto;
+}
+
+.outfitbox {
+  display:flex;
+  width:100%;
+  justify-content: center;
+}
+
+.outfitbox img {
+width:30%;
 }

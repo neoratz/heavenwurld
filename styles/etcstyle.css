@@ -534,11 +534,11 @@ body {
 
 @-webkit-keyframes snowflakes-fall {
     0% {
-        right: -10%
+        right: 0%;
     }
 
     100% {
-        right: 100%
+        right: 100%;
     }
 }
 
@@ -558,31 +558,18 @@ body {
 
 @keyframes snowflakes-fall {
     0% {
-        right: -10%,
+        right: 0%;
     }
 
     100% {
-        right: 100%
+        right: 100%;
     }
 }
 
-
-@keyframes snowflakes-shake {
-
-    0%,
-    100% {
-        transform: translateY(0)
-    }
-
-    50% {
-        transform: translateY(90px)
-    }
-}
 
 .snowflake {
     position: absolute;
-    right: -10%;
-    top: 30%;
+    right: 0%;
     z-index: 9;
     -webkit-animation-name: snowflakes-fall, snowflakes-shake;
     -webkit-animation-duration: 10s, 3s;
@@ -605,4 +592,13 @@ body {
 
 .snowflake img {
     width:50%
+}
+
+.flakes {
+  width:115%;
+  height:100px;
+  position:absolute;
+  right:-10%;
+  top:50%;
+  z-index:9;
 }

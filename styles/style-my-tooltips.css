@@ -1,0 +1,18 @@
+/* style-my-tootltips plugin, tooltip styling */
+#s-m-t-tooltip{
+	/* basic */
+	max-width:300px;
+	z-index:10;
+	margin:24px 14px 7px 12px;
+	/* style and design */
+	padding:2px;
+	background:white; /* fallback if rgba not supported */
+	-moz-box-shadow:2px 2px 0 #ffd6d2,-1px -1px 0 #ffd6d2;
+	-webkit-box-shadow:2px 2px 0 #ffd6d2,-1px -1px 0 #ffd6d2;
+	box-shadow:2px 2px 0 #ffd6d2,-1px -1px 0 #ffd6d2;
+	/* font */
+	font-family:strawberrymuffins;
+	font-size:12px;
+	color:#bcd7a2;
+	border:1px dotted #bcd7a2;
+}
