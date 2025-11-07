@@ -357,11 +357,10 @@ width:100%;
 }
 
 .outfitbox {
-  display:flex;
   width:100%;
-  justify-content: center;
+  text-align:center;
 }
 
 .outfitbox img {
-width:30%;
+height:20cqw;
 }
