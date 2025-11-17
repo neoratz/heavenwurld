@@ -157,6 +157,7 @@ color: #c26338;
 
 .btnMenu a, .btnMenu a:visited {
    color: #fcf6f2;
+   text-decoration:none;
 }
 
 .btn:hover {
