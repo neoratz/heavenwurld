@@ -76,6 +76,7 @@ body {
   transform: translate(-50%, -50%);
   z-index:0;
   overflow:hidden;
+  font-size:1.4cqw;
 }
 
 .boxhead {
@@ -346,6 +347,8 @@ width:100%;
 .special {
     color: #ffabac;
     background-image: url(/images/home/yellow-sparkles.gif);
+        background-size:62px;
+    image-rendering: pixelated;
 }
 
 .htext {

@@ -1,0 +1,197 @@
+.content a:link, .closer a:link,
+.content a:visited, .closer a:visited  {
+  text-decoration: underline;
+  color: #a2a24d;
+}
+
+.content a:hover, .closer a:hover {
+  color: #e8e9a6;
+  text-decoration: none;
+
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #ffffff;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #fff0c8;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #ffe680;
+}
+
+:root {
+  scrollbar-color: #fff0c8 #FFFFFF !important;
+  scrollbar-width: thin !important;
+  --backgroundSize: 65px;
+}
+
+
+@font-face {
+  font-family: "strawberrymuffins";
+  src: url("/fonts/BalsamiqSans-Regular.woff2") format("woff2"),
+    url("/fonts/BalsamiqSans-Regular.woff") format("woff");
+}
+
+@font-face {
+  font-family: "porkys";
+  src: url("/fonts/porkys.woff2") format("woff2"),
+    url("/fonts/porkys.woff") format("woff");
+}
+
+@keyframes movingBackground {
+  from {
+    background-position: 0 0;
+  }
+
+  to {
+    background-position: var(--backgroundSize) var(--backgroundSize);
+  }
+}
+
+body {
+  font-family: "strawberrymuffins";
+  font-size: 15px;
+  background: url(/images/bg/anime.png);
+  background-size: var(--backgroundSize);
+  color: #5e2e2d;
+  animation: movingBackground 5s linear infinite;
+  overflow: hidden;
+}
+
+.main {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1375px;
+  z-index: 0;
+  pointer-events: none;
+  -webkit-touch-callout: none;
+  /* iOS Safari */
+  -webkit-user-select: none;
+  /* Safari */
+  -khtml-user-select: none;
+  /* Konqueror HTML */
+  -moz-user-select: none;
+  /* Old versions of Firefox */
+  -ms-user-select: none;
+  /* Internet Explorer/Edge */
+  user-select: none;
+
+}
+
+.sidebar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1375px;
+  z-index: 3;
+  pointer-events: none;
+  -webkit-touch-callout: none;
+  /* iOS Safari */
+  -webkit-user-select: none;
+  /* Safari */
+  -khtml-user-select: none;
+  /* Konqueror HTML */
+  -moz-user-select: none;
+  /* Old versions of Firefox */
+  -ms-user-select: none;
+  /* Internet Explorer/Edge */
+  user-select: none;
+}
+
+.content {
+  background-color: none;
+  width: 645px;
+  height: 468px;
+  z-index: 2;
+  position: absolute;
+  top: 122px;
+  left: 515.5px;
+  font-size: 20px;
+  overflow-y: scroll;
+  overflow-x:hidden;
+padding:15px;
+}
+
+.closer {
+  position: absolute;
+  top: 665px;
+  left: 580px;
+  text-align: right;
+  align-items: right;
+  justify-content: right;
+color: #c26338;
+  z-index: 0;
+  font-size: 15px;
+}
+
+.btnCurrent {
+    background: #de9a81;
+    background-repeat: repeat;
+    background-size:40px;
+    padding:5px;
+    display:inline-block;
+    border-radius: 5px 5px 0px 0px;
+    color: #fcf6f2;
+    text-shadow: -2px 0 #b26347, 0 2px #b26347, 2px 0 #b26347, 0 -2px #b26347;
+}
+
+.btn {
+    background: #b26347;
+    color:#fef6de;
+    padding:5px;
+    display:inline-block;
+    border-radius: 5px 5px 0px 0px;
+    text-shadow: -2px 0 #5e2e2d, 0 2px #5e2e2d, 2px 0 #5e2e2d, 0 -2px #5e2e2d;
+}
+
+.btnMenu a, .btnMenu a:visited {
+   color: #fcf6f2;
+}
+
+.btn:hover {
+    background: #de9a81;
+    color: #fcf6f2;
+    padding:5px;
+    display:inline-block;
+    border-radius: 5px 5px 0px 0px;
+    text-decoration:underline;
+    text-decoration-style: wavy;
+    text-shadow:none;
+    text-shadow: -2px 0 #b26347, 0 2px #b26347, 2px 0 #b26347, 0 -2px #b26347;
+}
+
+.btnMenu {
+    font-family: "Porkys";
+    position: absolute;
+    top:72px;
+    left:595px;
+    z-index:1;
+    background: none;
+    color:#fef6de;
+    display:inline-block;
+    font-size:25px;
+    width:100%;
+}
+
+.txtBox {
+    background:white;
+    border: 1px solid #5e2e2d;
+    border-radius:5px;
+    display:inline-block;
+    padding:5px;
+}
+
+.ib {
+border: 1px solid #5e2e2d;
+}

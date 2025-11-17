@@ -352,9 +352,15 @@ body {
   margin: 0 auto;
 }
 
+.litext {
+  text-align: left;
+}
+
 .special {
     color: #ffabac;
     background-image: url(/images/home/yellow-sparkles.gif);
+        background-size:62px;
+    image-rendering: pixelated;
 }
 
 .boxcon {
