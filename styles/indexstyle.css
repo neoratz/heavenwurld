@@ -141,13 +141,14 @@ body {
 }
 
 .content {
-  background-color: #fff0f0;
+  background: url(/images/home/bgdot3.png);
+  background-size: 7px;
   width: 388px;
   height: 384px;
   position: absolute;
   top: 281px;
   left: 173px;
-  font-size: 14px;
+  font-size: 12px;
   overflow: hidden;
 
 }
@@ -202,7 +203,7 @@ body {
   color: #d0eeb4;
   height: 15px;
   width: 360px;
-  font-size: 15px;
+  font-size: 13px;
   align-items: center;
   justify-content: center;
 }
@@ -334,18 +335,27 @@ body {
 }
 
 .box1 {
-  width: 318px;
-  height: 100px;
-  padding: 5px;
+  width: 85%;
+  height: 115px;
+  padding: 8px;
   margin: 10px;
-  background-color: white;
-  border: 7px solid #ffd6d2;
+  background: none;
+  border-image: url("/images/home/border.png") 20 / 10px round;
+}
+
+.dashborder {
+width:100%;
+height:100%;
+border: 2px dashed #fff0f0;
+padding:4px;
+  background: white;
+  box-sizing: border-box;
 }
 
 .htext {
   font-family: porkys;
   color: #ffabac;
-  font-size: 15px;
+  font-size: 13px;
   display: block;
   text-align: left;
   margin: 0 auto;
@@ -415,7 +425,7 @@ body {
   position: absolute;
   width: 230px;
   left: 20px;
-  top: 196px;
+  top: 206px;
   word-spacing: 1px;
 }
 
@@ -444,7 +454,7 @@ body {
 .hstext {
   font-family: porkys;
   color: white;
-  font-size: 15px;
+  font-size: 13px;
   display: block;
   text-align: left;
   margin: 0 auto;
@@ -456,7 +466,7 @@ body {
 .hsstext {
   font-family: porkys;
   color: white;
-  font-size: 15px;
+  font-size: 13px;
   display: block;
   text-align: left;
   margin: 0 auto;

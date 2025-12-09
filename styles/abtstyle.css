@@ -140,7 +140,9 @@ body {
 }
 
 .content {
-  background-color: #fff0f0;
+  background: url(/images/home/bgdot3.png);
+  background-size: 7px;
+  background-attachment: scroll;
   width: 388px;
   height: 384px;
   position: absolute;
@@ -148,7 +150,7 @@ body {
   left: 173px;
   font-size: 12px;
   overflow-y: scroll;
-  overflow-x:hidden;
+  overflow-x: hidden;
 
 }
 
@@ -202,7 +204,7 @@ body {
   color: #d0eeb4;
   height: 15px;
   width: 360px;
-  font-size: 15px;
+  font-size: 13px;
   align-items: center;
   justify-content: center;
 }
@@ -345,17 +347,17 @@ body {
 .htext {
   font-family: porkys;
   color: #ffabac;
-  font-size: 15px;
+  font-size: 13px;
   display: block;
   text-align: left;
   margin: 0 auto;
 }
 
 .special {
-    color: #ffabac;
-    background-image: url(/images/home/yellow-sparkles.gif);
-        background-size:62px;
-    image-rendering: pixelated;
+  color: #ffabac;
+  background-image: url(/images/home/yellow-sparkles.gif);
+  background-size: 62px;
+  image-rendering: pixelated;
 }
 
 .boxcon {
@@ -383,10 +385,10 @@ body {
 }
 
 .box3 {
-    border-bottom: 1px dashed #d0eeb4;
-    border-left: 1px dashed #d0eeb4;
-    border-right: 1px dashed #d0eeb4;
-    width:142px;
+  border-bottom: 1px dashed #d0eeb4;
+  border-left: 1px dashed #d0eeb4;
+  border-right: 1px dashed #d0eeb4;
+  width: 142px;
 }
 
 .closer {
@@ -402,70 +404,159 @@ body {
   font-size: 14px;
 }
 
-.box4 {
-    width: 90%;
-    padding: 5px;
-    margin: 10px;
-    background-color: white;
-    border: 7px solid #ffd6d2;
+.laceborder {
+  width: 85%;
+  padding: 8px;
+  margin: 10px;
+  background: none;
+  border-image: url("/images/home/border.png") 20 / 10px round;
+}
+
+.lacebordery {
+  width: 90%;
+  padding: 8px;
+  background: none;
+  border-image: url("/images/home/bordery.png") 20 / 10px round;
+}
+
+.dashborder {
+  width: 100%;
+  height: 100%;
+  border: 2px dashed #fff0f0;
+  padding: 4px;
+  background: white;
+  box-sizing: border-box;
+}
+
+.dashbordery {
+  width: 100%;
+  height: 100%;
+  border: 2px dashed #fff0f0;
+  padding: 4px;
+  background: url(/images/home/bgdoty.png);
+  background-size: 7px;
+  box-sizing: border-box;
+}
+
+.dashborderg {
+  width: 100%;
+  height: 100%;
+  border: 2px dashed #fff0f0;
+  padding: 4px;
+  background: url(/images/home/bgdotg.png);
+  background-size: 7px;
+  box-sizing: border-box;
+}
+
+hr {
+  display: block;
+  border: 0;
+  border-top: 2px dashed #def3ca;
+  margin: 1px;
+  padding: 0;
+}
+
+.hr2 {
+  display: block;
+  border: 0;
+  border-top: 2px dashed #fbefbf;
+  margin: 1px;
+  padding: 0;
 }
 
 .quizres {
-    border: 1px solid #ffd6d2;
-    overflow-x: hidden;
-    overflow-y: scroll;
-    width:100%;
-    height:140px;
+  border: 1px solid #ffd6d2;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  width: 100%;
+  height: 123px;
+  line-height: 0px;
 }
 
 .quizres img {
-    width:100%
+  width: 100%
 }
 
 .love tr {
-    background: #fff0c8;
-    justify-content: left;
-    align-items: left;
-    text-align: left;
-    color: #ffd4a6;
+  background: #fff0c8;
+  justify-content: left;
+  align-items: left;
+  text-align: left;
+  color: #ffd4a6;
 }
 
 .love td:nth-child(even) {
-    background: #ffd6d2;
-    color: #c96473;
+  background: #ffd6d2;
+  color: #c96473;
 }
 
 .love th {
-    color: #ffd4a6;
-    padding: 0.5cqw;
+  color: #ffd4a6;
+  padding: 0.5cqw;
 }
 
 .love {
-    border-right: 1px dashed #fff0c8;
-    border-bottom: 1px dashed #fff0c8;
-    width: 100%;
+  border-right: 1px dashed #fff0c8;
+  border-bottom: 1px dashed #fff0c8;
+  width: 100%;
 }
 
 .about tr {
-    background: #ffd6d2;
-    justify-content: left;
-    align-items: left;
-    text-align: left;
-    color: #ffabac;
+  background: #ffd6d2;
+  justify-content: left;
+  align-items: left;
+  text-align: left;
+  color: #ffabac;
 }
 
 .about td:nth-child(even) {
-    background: #fff0c8;
-    color: #c96473;
+  background: #fff0c8;
+  color: #c96473;
 }
 
 .about th {
-    color: #ffabac;
-    padding: 0.5cqw;
+  color: #ffabac;
+  padding: 0.5cqw;
 }
 
 .about {
-    border-right: 1px dashed #ffd6d2;
-    border-bottom: 1px dashed #ffd6d2;
-    width: 100%;
+  border-right: 1px dashed #ffd6d2;
+  border-bottom: 1px dashed #ffd6d2;
+  width: 100%;
+}
+
+
+.raspberry {
+  text-shadow: -1px 0 #ff8fb9, 0 1px #ff8fb9, 1px 0 #ff8fb9, 0 -1px #ff8fb9;
+  color: #E30B5D;
+}
+
+.bubblegum {
+  text-shadow: -1px 0 #ff59ae, 0 1px #ff59ae, 1px 0 #ff59ae, 0 -1px #ff59ae;
+  color: #FF8DC7;
+}
+
+.cotton {
+  text-shadow: -1px 0 #79e9ed, 0 1px #79e9ed, 1px 0 #79e9ed, 0 -1px #79e9ed;
+  color: #E1FEFF;
+}
+
+.candy {
+  text-shadow: -1px 0 #f27474, 0 1px #f27474, 1px 0 #f27474, 0 -1px #f27474;
+  color: #FFC0C0;
+}
+
+.lemon {
+  text-shadow: -1px 0 #f2e268, 0 1px #f2e268, 1px 0 #f2e268, 0 -1px #f2e268;
+  color: #FCFFC8;
+}
+
+.ramune {
+  text-shadow: -1px 0 #639ff2, 0 1px #639ff2, 1px 0 #639ff2, 0 -1px #639ff2;
+  color: #88CCFF;
+}
+
+.banana {
+  text-shadow: -1px 0 #ffe478, 0 1px #ffe478, 1px 0 #ffe478, 0 -1px #ffe478;
+  color:#FFFBE3;
 }
