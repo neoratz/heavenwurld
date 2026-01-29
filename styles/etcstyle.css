@@ -426,6 +426,11 @@ padding:4px;
   box-sizing: border-box;
 }
 
+.noticebox {
+  background-color: #ffabac;
+  color:white;
+}
+
 .quizres {
     border: 1px solid #ffd6d2;
     overflow-x: hidden;

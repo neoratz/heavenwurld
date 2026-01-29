@@ -1,35 +1,346 @@
-.leftbox {
-    width:20%;
-    height:20%;
-    background:green;
-    position:absolute;
-    text-align:left;
-    padding:1%;
-    margin:1%;
-overflow-y:scroll;
-overflow-x:hidden;
-}
-.mainbox {
-    width:50%;
-    height:97vh;
-    background:blue;
-padding:1%;
-text-align:left;
-overflow-y:scroll;
-overflow-x:hidden;
+@font-face {
+    font-family: "strawberrymuffins";
+    src: url("/fonts/BalsamiqSans-Regular.woff2") format("woff2"),
+        url("/fonts/BalsamiqSans-Regular.woff") format("woff");
 }
 
-html, body, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, caption {
+@font-face {
+    font-family: "porkys";
+    src: url("/fonts/porkys.woff2") format("woff2"),
+        url("/fonts/porkys.woff") format("woff");
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #ffffff;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #fff0c8;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #ffe680;
+}
+
+:root {
+    scrollbar-color: #fff0c8 #FFFFFF !important;
+    scrollbar-width: thin !important;
+    --backgroundSize: 56px;
+}
+
+.leftbox {
+    width: 20%;
+    height: 20%;
+    background: none;
+    position: absolute;
+    text-align: left;
+    padding: 0px;
+    margin:1%;
+    overflow-y: hidden;
+    overflow-x: hidden;
+    font-family: 'Ms Gothic';
+    font-size:17px;
+}
+
+.leftbox:hover {
+    overflow-y: auto;
+}
+
+.menuheader {
+    background-image: url('/images/bg/divpinkginghamlace.gif');
+    background-size:42px;
+    image-rendering: pixelated;
+    background-repeat:repeat-x;
+    width: 100%;
+    box-sizing:border-box;
+    color:white;
+text-shadow: -1px -1px 0 #ffabac, 1px -1px 0 #ffabac, -1px 1px 0 #ffabac, 1px 1px 0 #ffabac;
+height:53px;
+        font-family: 'MS Gothic';
+        font-size:17px;
+        padding-top:5px;
+}
+
+.menu {
+    background:white;
+    border:1px dashed #a9744c;
+    width:400px;
+    max-width:80vw;
+}
+
+.leftdesc {
+    border-bottom:1px dashed #a9744c;
+    width: 100%;
+    box-sizing: border-box;
+    padding-bottom:2px;
+    margin-bottom:2px;
+}
+
+.frillybox {
+    width: 100%;
+    height: auto;
+    padding: 8px;
+    margin-bottom: 10%;
+    background: none;
+    border-image: url("/images/home/border.png") 20 / 8px round;
+    box-sizing:border-box;
+}
+
+.dashborder {
+    width: 100%;
+    height: 100%;
+    border: 2px dashed #fff0f0;
+    padding: 1%;
+    background: white;
+    box-sizing: border-box;
+}
+
+.mainbox {
+    width: 50vw;
+    height: 100vh;
+    background: none;
+    padding: 1%;
+    margin: 0;
+    text-align: left;
+    overflow-y: hidden;
+    overflow-x:hidden;
+}
+
+.mainbox:hover {
+    overflow-y: auto;
+}
+
+html,
+body,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+font,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+caption {
     margin: 0;
 }
 
 body {
-    overflow: hidden;
+  font-family: "strawberrymuffins";
+  font-size: 1.5vw;
+  background: url(/images/bg/pinkdashedgingham.png);
+  background-size: var(--backgroundSize);
+  animation: movingBackground 5s linear infinite;
+  overflow: hidden;
+  color: #c96373;
+}
+
+.bodybtm {
+    width:100vw;
+    height:27px;
+    background-image: url("/images/bg/divpinkdiamondlace.gif");
+    background-repeat: repeat-x;
+    background-size:30px;
+    image-rendering: pixelated;
+    position:absolute;
+    background-size:auto;
+    z-index:2;
+    bottom:1%;
+    margin:0;
+vertical-align: top;
+}
+
+.flavorMarquee {
+    padding-top: 7px;
+    margin:0;
+    font-size:11px;
+    display:inline-block;
+    height:27px;
+    vertical-align: middle;
+    font-family:'MS Gothic';
 }
 
 .sideimg {
-    position:absolute;
-    bottom:0;
-    right:1%;
-    height:20vw;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 30vw;
+    z-index:3;
+}
+
+.menubtn {
+    background: none;
+    border: none;
+    font-family: 'MS Gothic';
+    font-size: 17px;
+    color:white;
+text-shadow: -1px -1px 0 #c96373, 1px -1px 0 #c96373, -1px 1px 0 #c96373, 1px 1px 0 #c96373;
+        padding:0;
+    margin:0;
+    letter-spacing:0.2vw;
+}
+
+.menubtn:hover {
+    color: #ffabac;
+text-shadow: -1px -1px 0 white, 1px -1px 0 white, -1px 1px 0 white, 1px 1px 0 white;
+}
+
+.listbtn {
+    background-image: url("/images/gen/pixels/green-four-clover.gif");
+    background-size: 13px;
+    background-repeat: no-repeat;
+    padding-left:13px;
+    text-align:left;
+    border: 0;
+    background-color: transparent;
+    font-family: 'MS Gothic';
+    font-size: 13px;
+color: #ffabac;
+    text-shadow: -1px -1px 0 white, 1px -1px 0 white, -1px 1px 0 white, 1px 1px 0 white;
+}
+
+.listbtn:hover {
+
+    color:white;
+        text-shadow: -1px -1px 0 #ffabac, 1px -1px 0 #ffabac, -1px 1px 0 #ffabac, 1px 1px 0 #ffabac;
+    border: none;
+}
+
+.htext {
+    font-family: porkys;
+    color: #ffabac;
+    font-size: 2vw;
+    display: inline-block;
+    text-align: left;
+    margin: 0;
+    width:70%;
+}
+
+.date {
+    font-family: porkys;
+    color: #ffabac;
+    font-size: 2vw;
+    display: inline-block;
+    text-align: right;
+    width:30%;
+    margin: 0;
+}
+
+.closer {
+    font-family: porkys;
+    color: #ffabac;
+    font-size: 2vw;
+    display: inline-block;
+    text-align: right;
+    width:100%;
+    margin: 0;
+}
+
+.subh1 {
+    font-family: strawberrymuffins;
+    color: #ffabac;
+    font-size: 1.4vw;
+    display: inline-block;
+    text-align: left;
+    margin: 0;
+}
+
+.subh2 {
+    font-family: strawberrymuffins;
+    color: #ffabac;
+    font-size: 1.4vw;
+    display: inline-block;
+    text-align: right;
+    margin: 0;
+}
+
+.einfo {
+    justify-content: space-between;
+    display:flex;
+    width:100%;
+}
+
+.p {
+    border-bottom: 2px dashed #FFD8D4;
+    border-top: 2px dashed #FFD8D4;
+    color: #c96373;
+    text-align: justify;
+}
+.span1 {
+    display: block;
+    margin-bottom: -0.01vh;
+}
+.span2 {
+    border-bottom: 2px dashed #FFD8D4;
+}
+
+@keyframes movingBackground {
+  from {
+    background-position: 0 0;
+  }
+
+  to {
+    background-position: var(--backgroundSize) var(--backgroundSize);
+  }
+}
+
+a:link,
+a:visited {
+  text-decoration: underline;
+  color: #bcd7a2;
+}
+
+a:hover {
+  color: #ffabac;
+  text-decoration: none;
+
 }
