@@ -1,9 +1,4 @@
-.sparklebox {
-  z-index:10;
-  pointer-events: none;
-  width:100vw;
-  height:100vh;
-}
+
 
 a:link,
 a:visited {
@@ -72,24 +67,29 @@ body {
   background-size: var(--backgroundSize);
   color: #c96373;
   animation: movingBackground 5s linear infinite;
-  overflow: hidden;
+overflow-y:auto;
+overflow-x:hidden;
+height:100%;
+}
+
+html {
+    overscroll-behavior: none;
 }
 
 .parent {
   position: relative;
   top: 0;
   left: 0;
-  width: 1000px;
-  height: 719px;
-  overflow: hidden;
+  width: 100vw;
   margin: 0;
+
 }
 
 .main {
   position: absolute;
   top: 0;
   left: 0;
-  width: 950px;
+  width: 100vw;
   z-index: 1;
   pointer-events: none;
   -webkit-touch-callout: none;
@@ -110,7 +110,7 @@ body {
   position: absolute;
   top: 0;
   left: 0;
-  width: 950px;
+  width: 100vw;
   z-index: 3;
   pointer-events: none;
   -webkit-touch-callout: none;
@@ -130,7 +130,7 @@ body {
   position: absolute;
   top: 0;
   left: 0;
-  width: 950px;
+  width: 100vw;
   z-index: 4;
   pointer-events: none;
   -webkit-touch-callout: none;
@@ -149,14 +149,15 @@ body {
 .content {
   background: url(/images/home/bgdot3.png);
   background-size: 7px;
-  width: 388px;
-  height: 384px;
+  width: 40vw;
+  height: 40vw;
   position: absolute;
-  top: 281px;
-  left: 173px;
-  font-size: 12px;
-  overflow: hidden;
-
+  top: 29vw;
+  left: 18%;
+  font-size: 1vw;
+  overflow-y: scroll;
+  overflow-x:hidden;
+padding:1vw;
 }
 
 .clock {
@@ -164,8 +165,8 @@ body {
   background-image: url("/images/homepage/face2.gif");
   background-repeat: no-repeat;
   position: absolute;
-  top: 98px;
-  right: 77px;
+  top: 10.7vw;
+  right: 5.45vw;
   pointer-events: none;
   -webkit-touch-callout: none;
   /* iOS Safari */
@@ -202,14 +203,14 @@ body {
 
 .bannertext {
   position: absolute;
-  top: 259px;
-  left: 200px;
+  top: 27.4vw;
+  left: 22%;
   z-index: 2;
   background-color: white;
   color: #d0eeb4;
-  height: 15px;
-  width: 360px;
-  font-size: 13px;
+  height: 1.5vw;
+  width: 37vw;
+  font-size: 1em;
   align-items: center;
   justify-content: center;
 }
@@ -218,18 +219,19 @@ body {
   position: absolute;
   align-items: right;
   justify-content: right;
-  top: 230px;
-  right: 373px;
+  top: 24.3vw;
+  right: 36.7%;
   z-index: 6;
-  font-size: 17px;
+  font-size: 1.5em;
   width: 100%;
   color: #ffd4a6;
 }
 
 .fruitButtons {
   position: absolute;
-  top: 295px;
-  left: 50px;
+  top: 31vw;
+  left: 5%;
+  width:15vw;
   z-index: 6;
   -webkit-touch-callout: none;
   /* iOS Safari */
@@ -244,10 +246,66 @@ body {
   user-select: none;
 }
 
+.homeButton{
+    top:31vw;
+    left:13.2%;
+    width:6.5vw;
+    z-index:7;
+    position:absolute;
+}
+
+.aboutButton{
+    top:34.8vw;
+    left:5.2%;
+    width:7.3vw;
+    z-index:7;
+    position:absolute;
+}
+
+.exploreButton{
+    top:39.8vw;
+    left:13%;
+    width:5.9vw;
+    z-index:7;
+    position:absolute;
+}
+
+.readButton{
+    top:46.5vw;
+    left:5.1%;
+    width:5.9vw;
+    z-index:7;
+    position:absolute;
+}
+
+.funButton{
+    top:51.9vw;
+    left:12.9%;
+    width:6.6vw;
+    z-index:7;
+    position:absolute;
+}
+
+.linksButton{
+    top:60.9vw;
+    left:5.3%;
+    width:5.3vw;
+    z-index:7;
+    position:absolute;
+}
+
+.artButton{
+    top:60.3vw;
+    left:13.4%;
+    width:6.5vw;
+    z-index:7;
+    position:absolute;
+}
+
 .logo {
   position: absolute;
-  top: 205px;
-  right: 430px;
+  top: 21.4vw;
+  right: 40%;
   z-index: 6;
   -webkit-touch-callout: none;
   /* iOS Safari */
@@ -319,8 +377,8 @@ body {
 
 .stamp {
   position: absolute;
-  top: 402px;
-  right: 397px;
+  top: 42.5vw;
+  right: 36.5%;
   z-index: 3;
   transition: transform .8s ease-in-out;
   -webkit-touch-callout: none;
@@ -341,19 +399,18 @@ body {
 }
 
 .box1 {
-  width: 85%;
-  height: 115px;
-  padding: 8px;
-  margin: 10px;
+  width:90%;
+  padding: 0.417vw;
+  margin: 0.521vw;
   background: none;
-  border-image: url("/images/home/border.png") 20 / 10px round;
+  border-image: url("/images/home/border.png") 20 / 0.521vw round;
 }
 
 .dashborder {
 width:100%;
 height:100%;
 border: 2px dashed #fff0f0;
-padding:4px;
+padding:0.208vw;
   background: white;
   box-sizing: border-box;
 }
@@ -361,83 +418,101 @@ padding:4px;
 .htext {
   font-family: porkys;
   color: #ffabac;
-  font-size: 13px;
+  font-size: 1.5vw;
   display: block;
   text-align: left;
   margin: 0 auto;
+}
+
+.sptext {
+  font-family: porkys;
+  color: #ffabac;
+}
+
+.sptext2 {
+  color: #D0EEB4;
 }
 
 .boxcon {
   align-items: center;
   justify-content: space-evenly;
   display: flex;
-  margin: 10px;
-  margin-top:20px;
-  
+  position:absolute;
+  width:100%;
 }
 
 .box2 {
-  width: 190px;
-  height: 120px;
-  padding: 5px;
+  width: 17vw;
+  height: 10vw;
+  padding: 0.26vw;
   background-color: white;
   overflow-y: scroll;
   overflow-x: hidden;
 }
 
 .box2out {
-  width: 200px;
-  height: 130px;
+  width: 17.5vw;
+  height: 10.5vw;
   background: url(/images/home/bggreen.png);
   background-size: 10px;
-  padding: 7px;
+  padding: 0.365vw;
   align-items: center;
   justify-content: center;
   border: 2px solid #bdd8a3;
+  position:relative;
 }
 
 .box3 {
-  width: 100px;
-  height: 150px;
+  width: 17.5vw;
+  height: 10.5vw;
   display: flex;
   justify-content: center;
   align-items: center;
 
 }
 
+.noticebox {
+  background-color: #ffabac;
+  color:white;
+}
+
 .closer {
   position: absolute;
-  bottom: 10px;
-  right: 440px;
+  top: 72.5vw;
+  right: 41%;
   text-align: right;
   align-items: right;
   justify-content: right;
-  vertical-align: bottom;
-  color: #ffabac;
-  z-index: 0;
-  font-size: 14px;
+  font-family: porkys;
+  color: white;
+  font-size: 1vw;
+  display: block;
+  text-align: left;
+  margin: 0 auto;
+  z-index: 6;
+  background: none;
+    text-shadow: -1px 0 #ffabac, 0 2px #ffabac, 1px 0 #ffabac, 0 -1px #ffabac;
 }
 
-.todo {
-  width: 70px;
-  height: 30px;
-  padding: 5px;
-  margin: 10px;
-  background-color: white;
-  border: 7px solid #ffd6d2;
+.guestbook {
+  z-index:8;
+  position:absolute;
+  left:6%;
+  top:66vw;
 }
 
 .menu {
   position: absolute;
-  width: 230px;
-  left: 20px;
-  top: 206px;
+  width: 17.5vw;
+  top: -1.6vw;
   word-spacing: 1px;
+  justify-content: space-evenly;
+  display:flex;
 }
 
 .menubtn {
   font-family: porkys;
-  font-size: 10px;
+  font-size: 1vw;
   color: white;
   background: url(/images/home/bggreen.png);
   background-repeat: repeat;
@@ -449,6 +524,7 @@ padding:4px;
   border-radius: 5px 5px 0 0;
   text-shadow: -1px 0 #bdd8a3, 0 2px #bdd8a3, 1px 0 #bdd8a3, 0 -1px #bdd8a3;
   display: inline-block;
+  padding:0.104vw;
 }
 
 .menubtn:hover {
@@ -460,7 +536,7 @@ padding:4px;
 .hstext {
   font-family: porkys;
   color: white;
-  font-size: 13px;
+  font-size: 1vw;
   display: block;
   text-align: left;
   margin: 0 auto;
@@ -472,7 +548,7 @@ padding:4px;
 .hsstext {
   font-family: porkys;
   color: white;
-  font-size: 13px;
+  font-size: 1vw;
   display: block;
   text-align: left;
   margin: 0 auto;
@@ -484,4 +560,147 @@ padding:4px;
   background: #fff0c8;
       text-align: left;
     display: block;
+}
+
+@-webkit-keyframes snowflakes-fall {
+    0% {
+        right: 0%;
+    }
+
+    100% {
+        right: 100%;
+    }
+}
+
+@-webkit-keyframes snowflakes-shake {
+
+    0%,
+    100% {
+        -webkit-transform: translateY(0);
+        transform: translateY(0)
+    }
+
+    50% {
+        -webkit-transform: translateY(80px);
+        transform: translateY(50px)
+    }
+}
+
+@keyframes snowflakes-fall {
+    0% {
+        right: 0%;
+    }
+
+    100% {
+        right: 100%;
+    }
+}
+
+
+.snowflake {
+    position: absolute;
+    right: 0%;
+    z-index: 9;
+    -webkit-animation-name: snowflakes-fall, snowflakes-shake;
+    -webkit-animation-duration: 10s, 3s;
+    -webkit-animation-timing-function: linear, ease-in-out;
+    -webkit-animation-iteration-count: infinite, infinite;
+    -webkit-animation-play-state: running, running;
+    animation-name: snowflakes-fall, snowflakes-shake;
+    animation-duration: 10s, 3s;
+    animation-timing-function: linear, ease-in-out;
+    animation-iteration-count: infinite, infinite;
+    animation-play-state: running, running;
+    pointer-events:auto;
+}
+
+.snowflake:nth-of-type(0) {
+    top: 1%;
+    -webkit-animation-delay: 0s, 0s;
+    animation-delay: 0s, 0s
+}
+
+.snowflake img {
+    width:50%
+}
+
+.flakes {
+  width:115%;
+  height:5.208vw;
+  position:absolute;
+  right:-10%;
+  top:13vw;
+  z-index:9;
+}
+
+/* about exclusive */
+
+.quizres {
+  border: 1px solid #ffd6d2;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  width: 100%;
+  height: 11vw;
+  line-height: 0px;
+}
+
+.quizres img {
+  width: 100%
+}
+
+hr {
+  display: block;
+  border: 0;
+  border-top: 2px dashed #def3ca;
+  margin: 0.052vw;
+  padding: 0;
+}
+
+.hr2 {
+  display: block;
+  border: 0;
+  border-top: 2px dashed #fbefbf;
+  margin: 0.052vw;
+  padding: 0;
+}
+
+.raspberry {
+  text-shadow: -1px 0 #ff8fb9, 0 1px #ff8fb9, 1px 0 #ff8fb9, 0 -1px #ff8fb9;
+  color: #E30B5D;
+}
+
+.bubblegum {
+  text-shadow: -1px 0 #ff59ae, 0 1px #ff59ae, 1px 0 #ff59ae, 0 -1px #ff59ae;
+  color: #FF8DC7;
+}
+
+.cotton {
+  text-shadow: -1px 0 #79e9ed, 0 1px #79e9ed, 1px 0 #79e9ed, 0 -1px #79e9ed;
+  color: #E1FEFF;
+}
+
+.candy {
+  text-shadow: -1px 0 #f27474, 0 1px #f27474, 1px 0 #f27474, 0 -1px #f27474;
+  color: #FFC0C0;
+}
+
+.lemon {
+  text-shadow: -1px 0 #f2e268, 0 1px #f2e268, 1px 0 #f2e268, 0 -1px #f2e268;
+  color: #FCFFC8;
+}
+
+.ramune {
+  text-shadow: -1px 0 #639ff2, 0 1px #639ff2, 1px 0 #639ff2, 0 -1px #639ff2;
+  color: #88CCFF;
+}
+
+.banana {
+  text-shadow: -1px 0 #ffe478, 0 1px #ffe478, 1px 0 #ffe478, 0 -1px #ffe478;
+  color:#FFFBE3;
+}
+
+/* read exclusive */
+
+.litext {
+  text-align: left;
 }
