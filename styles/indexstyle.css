@@ -476,6 +476,27 @@ padding:0.208vw;
   position:relative;
 }
 
+.box2abt {
+  width: 98%;
+  height: 10vw;
+  padding: 0.26vw;
+  background-color: white;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.box2outabt {
+  width: 90%;
+  height: 10.5vw;
+  background: url(/images/home/bggreen.png);
+  background-size: 10px;
+  padding: 0.365vw;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #bdd8a3;
+  position:relative;
+}
+
 .box3 {
   width: 17.5vw;
   height: 10.5vw;
@@ -519,6 +540,15 @@ padding:0.208vw;
 .menu {
   position: absolute;
   width: 17.5vw;
+  top: -1.6vw;
+  word-spacing: 1px;
+  justify-content: space-evenly;
+  display:flex;
+}
+
+.menuabt {
+  position: absolute;
+  width: 100%;
   top: -1.6vw;
   word-spacing: 1px;
   justify-content: space-evenly;
