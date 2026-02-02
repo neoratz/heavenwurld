@@ -10,7 +10,16 @@ let flavorTextOptions = [
     "92% of teenagers have turned to Faithstep and Heav N Bass.If you are part of the 8% that still listen to real music, copy and paste this message to another 5 websites. Dont let Angelmusic die.",
     "1)Say your name 10 times 2)say your dog or cat or mouses name 5 times 3)say your bus driver 3 times 4)PASTE THIS TO FOUR OTHER COMMENTS IN 777 MINUTES. WHEN UR DONE PRESS F13 AND UR HEAVENWURLD NAME WILL APPEAR IN BIG LETTERS ON THE SCREEN.",
     "citrus★mint★candy★drop★kick",
-    "The epicness is over 9000!"
+    "The epicness is over 9000!",
+    "It's like you put awesome sauce on an epic plate of bodaciousness.",
+    "Cutie Angel with Full of Love",
+    "She is so Cool Girl!! and my Honey Angel Baby!!",
+    "a fail so epicly funny it might just be a hilarius win",
+    "HEAVENWURLD IS THE WEBSITE FOR EVERY POP&CUTE GIRL",
+    "落ちついて聞いてください、いいですか？ Please calm down and listen,Okey? 来年、私のたくさんのクワカブが羽化します。My many beetles and stag beetles will emerging next year.",
+    "Ccram my mouth with crumbled brown sugar walnuts, then wash them down with milk. A gorgeous moment.",
+    "Feeling strawberry.",
+    "It's a good day to do what has to be done by me."
 ];
 
 let flavorTextElement = document.querySelector('.flavorText');

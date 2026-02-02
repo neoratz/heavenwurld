@@ -21,7 +21,11 @@ let aniTextOptions = [
     "Yummm, I wanna go back to my castle and munch sweet tacos!",
     "I have to update my sadness web diary.",
     "The happier the girl, the stronger her elemental power.",
-    "I'm called a slaughtering machine and I'll be turning nine soon."
+    "I'm called a slaughtering machine and I'll be turning nine soon.",
+    "I am mad scientist! It's so cool! Sonuvabitch.",
+    "I love being a cylinder.",
+    "Don't be so wide about it...",
+    "おれは Pig American です おれはばか I am average american man i enjoy bad game runescape"
 ];
 
 let aniTextElement = document.querySelector('.aniText');
