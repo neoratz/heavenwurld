@@ -51,7 +51,7 @@ else {
   randomText = ""
   //if you've chosen to include a random button, this builds the link that does that
   if (useRandom) {
-    randomText = `<a href='javascript:void(0)' onclick='randomSiten()'><img src="https://images.neopets.com/games/arcade/cat/luck_chance_30x30.gif" alt="random site"></a>`;
+    randomText = `<a href='javascript:void(0)' onclick='randomSiten()'><img src="https://images.neopets.com/games/arcade/cat/luck_chance_30x30.gif" alt="random site" width="30px" style="max-width:1vw;></a>`;
   }
 
   //this is the code that displays the widget - EDIT THIS if you want to change the structure
@@ -60,14 +60,14 @@ else {
     <tr>
       <td class='webring-info'><span class='webring-links'></span>
       <a href="https://dumbiee.neocities.org/webring/neopets/index.html">
-      <img src="https://dumbiee.neocities.org/img/webring/neopets/widget.png" alt="part of the virtupets bazaar webring" style="max-width: 3vw;"></a></td>
+      <img src="https://dumbiee.neocities.org/img/webring/neopets/widget.png" alt="part of the virtupets bazaar webring" style="max-width: 2vw;" width="92px"></a></td>
     </tr>
     <tr>
       <td class='webring-links' style="vertical-align:middle">
-      <a href='${sites[previousIndex]}'><img src="https://dumbiee.neocities.org/img/webring/neopets/prev.png" alt="prev site" style="padding:0.365vw; max-width:2vw;"></a>
+      <a href='${sites[previousIndex]}'><img src="https://dumbiee.neocities.org/img/webring/neopets/prev.png" alt="prev site" style="padding:0.365vw; max-width:1vw;" width="34px"></a>
         ${randomText}
         ${indexText}
-      <a href='${sites[nextIndex]}'><img src="https://dumbiee.neocities.org/img/webring/neopets/next.png" alt="next site" style="padding:0.365vw; max-width:2vw;"></a></span></td>
+      <a href='${sites[nextIndex]}'><img src="https://dumbiee.neocities.org/img/webring/neopets/next.png" alt="next site" style="padding:0.365vw; max-width:1vw;" width="36px"></a></span></td>
     </tr>
   </table>
   `);
