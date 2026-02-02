@@ -739,9 +739,57 @@ padding:0.208vw;
   width:100%;
   margin:0;
   padding:0;
-  height:5vw;
+  height:6vw;
   overflow:hidden;
   background:none;
+}
+
+#dumri-np {
+  margin: 0 auto;
+  padding: 0.781vw; /* creates some space around the widget */
+}
+
+#dumri-np table {
+  position: relative;
+  display: inline-block;
+  background-color: transparent; /* makes the background pure white */
+  margin: 0 auto; /* centers the widget */
+  border-radius: 20px;
+  width: auto;
+  font-size: .9em;
+  line-height: initial;
+  vertical-align: middle;
+}
+
+#dumri-np table tr td {
+  padding: 0px; /* creates some space between the links and text inside the widget */
+  vertical-align: middle;
+}
+
+#dumri-np .webring-prev {
+  text-align:right;
+  padding-top: 3.906vw;
+}
+
+#dumri-np .webring-info {
+   text-align:center;
+}
+
+#dumri-np .webring-next {
+  text-align:left;
+  padding-top: 3.906vw;
+}
+
+#dumri-np .webring-links {
+  font-size: .8em;
+  padding: 0px;
+  margin-top: .5em;
+  margin-bottom: .5em;
+  border-radius: 10px;
+  color: #000;
+  text-shadow: 1px 1px #fff;
+  text-align: center;
+  font-weight: bold;
 }
 
 /* links exclusive */
