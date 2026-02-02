@@ -51,7 +51,7 @@ else {
   randomText = ""
   //if you've chosen to include a random button, this builds the link that does that
   if (useRandom) {
-    randomText = `<a href='javascript:void(0)' onclick='randomSiten()'><img src="https://images.neopets.com/games/arcade/cat/luck_chance_30x30.gif" alt="random site" width="30px" style="max-width:3vw;></a>`;
+    randomText = `<a href='javascript:void(0)' onclick='randomSiten()'><img src="https://images.neopets.com/games/arcade/cat/luck_chance_30x30.gif" alt="random site"></a>`;
   }
 
   //this is the code that displays the widget - EDIT THIS if you want to change the structure
@@ -60,7 +60,7 @@ else {
     <tr>
       <td class='webring-info'><span class='webring-links'></span>
       <a href="https://dumbiee.neocities.org/webring/neopets/index.html">
-      <img src="https://dumbiee.neocities.org/img/webring/neopets/widget.png" alt="part of the virtupets bazaar webring" style="max-width: 4vw;" width="92px"></a></td>
+      <img src="https://dumbiee.neocities.org/img/webring/neopets/widget.png" alt="part of the virtupets bazaar webring" style="max-width: 5vw;" width="92px"></a></td>
     </tr>
     <tr>
       <td class='webring-links' style="vertical-align:middle">
