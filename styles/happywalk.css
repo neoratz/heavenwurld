@@ -1,0 +1,154 @@
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: none;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: blue;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: red;
+}
+
+:root {
+    scrollbar-color: blue transparent !important;
+    scrollbar-width: thin !important;
+}
+
+body {
+    background: #B8EAFF;
+    background: linear-gradient(rgba(184, 234, 255, 1) 50%, rgba(255, 255, 255, 1) 100%);
+    background-attachment: fixed;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+@media (max-width: 600px) {
+  .parent {
+    flex-direction: column;
+  }
+
+    .linkbox, .linkbox button, .mainbox{
+    font-size:1.2rem !important;
+  }
+
+  .crosswalk {
+    width:100% !important;
+  }
+}
+
+.crosswalk {
+    width:50%;
+}
+
+.mainbox {
+    font-size: 1.2rem;
+    display: inline-block;
+    height: 95vh;
+overflow:hidden;
+    width: 85%;
+    height:100%;
+    order:2;
+}
+
+.linkbox {
+    font-style: italic;
+    left: 0;
+    top: 0;
+    display: inline-block;
+    font-size: 1.2rem;
+    width: 20%;
+    order: 1;
+}
+
+.linkbox a,
+.mainbox a {
+    color: green;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.linkbox a:visited,
+.mainbox a:visited {
+    color: green;
+}
+
+.linkbox a:hover,
+.mainbox a:hover {
+    text-decoration: underline;
+    color: blue;
+}
+
+
+.parent {
+      display: flex;
+  justify-content: space-between;
+    overflow-x: hidden;
+}
+
+.car {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    pointer-events: none;
+}
+
+h1,
+h2 {
+    margin: 0;
+}
+
+h1 {
+    color: blue;
+}
+
+h2 {
+    color: red;
+}
+
+h2 a,
+h2 a:visited {
+    color: red !important;
+}
+
+h2 a:hover {
+    color: blue !important;
+    text-decoration: none;
+}
+
+button {
+    border: none;
+    background: none;
+    color: green;
+    text-decoration: none;
+    font-weight: bold;
+    font-style: italic;
+    left: 0;
+    top: 0;
+    display: inline-block;
+    font-size: 1.2rem;
+    padding: 0;
+    font-family: 'Times New Roman';
+}
+
+button:hover {
+    text-decoration: underline;
+    color: blue;
+}
+
+textarea {
+    width: 90%;
+    height: 23vh;
+}
+
+hr {
+    border: 0;
+    border-bottom: white dashed 0.5rem;
+}
